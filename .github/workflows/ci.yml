@@ -1,0 +1,67 @@
+name: Validation et publication
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: "Exécution normale ou preuve de blocage"
+        type: choice
+        default: normal
+        options: [normal, test-failure, critical-vulnerability]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm test
+        env:
+          UE03_DEMO_FAIL: ${{ inputs.scenario == 'test-failure' && '1' || '0' }}
+      - run: npm run import:history && npm run analyze
+      - name: Vérifier les règles et leurs cas de test
+        run: docker run --rm --entrypoint /bin/promtool -v "$PWD/config/prometheus:/rules:ro" -w /rules prom/prometheus:v3.15.0@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e test rules tests.yml
+  image:
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Construire l'image applicative
+        run: docker build --target runtime -t ue03-telemetry:local .
+      - name: Ajouter une dépendance vulnérable pour la démonstration
+        if: inputs.scenario == 'critical-vulnerability'
+        run: docker build -f ci/Dockerfile.vulnerable -t ue03-critical-demo:local .
+      - name: Bloquer toute vulnérabilité critique
+        env:
+          SCENARIO: ${{ inputs.scenario }}
+        run: |
+          image=ue03-telemetry:local
+          if [ "$SCENARIO" = critical-vulnerability ]; then image=ue03-critical-demo:local; fi
+          sh ci/scan-image.sh "$image"
+      - name: Conserver le rapport du scanner même en cas d'échec
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scan-trivy-${{ github.run_id }}
+          path: artifacts/ci/trivy.json
+          if-no-files-found: warn
+      - name: Publier l'image validée dans GHCR
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && (inputs.scenario == '' || inputs.scenario == 'normal')
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          registry="ghcr.io/${GITHUB_REPOSITORY,,}"
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker tag ue03-telemetry:local "$registry:sha-$GITHUB_SHA"
+          docker push "$registry:sha-$GITHUB_SHA"

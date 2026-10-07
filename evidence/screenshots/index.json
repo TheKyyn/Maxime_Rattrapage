@@ -1,0 +1,38 @@
+[
+  {
+    "file": "evidence/screenshots/integrite-details.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  },
+  {
+    "file": "evidence/screenshots/integrite-overview.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  },
+  {
+    "file": "evidence/screenshots/performance-cohortes.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  },
+  {
+    "file": "evidence/screenshots/performance-overview.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  },
+  {
+    "file": "evidence/screenshots/service-alertes.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  },
+  {
+    "file": "evidence/screenshots/service-overview.jpg",
+    "capturedOn": "2026-10-06",
+    "source": "Grafana local, captures du navigateur",
+    "retouched": false
+  }
+]

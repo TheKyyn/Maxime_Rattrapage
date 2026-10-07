@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-06T15:29:03.886732+00:00",
+  "localOnly": true,
+  "node": "v25.2.1",
+  "docker": "Docker version 24.0.2, build cb74dfc",
+  "existingCommit": "8660d8e491363b890856b8eb483a44cbf5895512",
+  "tests": {
+    "node": 18,
+    "promtoolScenarios": 21,
+    "dashboardQueries": 28
+  },
+  "historicalEvents": 2889,
+  "scanNormalExit": 0,
+  "testFailureExit": 1,
+  "scanVulnerableExit": 1,
+  "githubActionsRuns": [],
+  "ghcrPublished": false
+}

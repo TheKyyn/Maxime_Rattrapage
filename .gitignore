@@ -1,0 +1,6 @@
+node_modules/
+logs/
+artifacts/
+.env
+.DS_Store
+demo-original.mov

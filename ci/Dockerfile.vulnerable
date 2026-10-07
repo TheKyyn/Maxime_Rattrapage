@@ -1,0 +1,7 @@
+# Image jetable de démonstration. Ne jamais déployer ou publier cette cible.
+ARG APP_IMAGE=ue03-telemetry:local
+FROM ${APP_IMAGE}
+USER root
+RUN mkdir /opt/critical-demo && chown node:node /opt/critical-demo
+USER node
+RUN npm install --prefix /opt/critical-demo --ignore-scripts --no-audit --no-fund lodash@4.17.11

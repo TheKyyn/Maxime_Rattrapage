@@ -1,0 +1,73 @@
+#1 [app internal] load .dockerignore
+#1 transferring context: 145B done
+#1 DONE 0.0s
+
+#2 [app internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.05kB done
+#2 DONE 0.0s
+
+#3 [app internal] load metadata for docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#3 DONE 0.0s
+
+#4 [app dependencies 1/4] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+#4 DONE 0.0s
+
+#5 [app internal] load build context
+#5 transferring context: 3.40kB done
+#5 DONE 0.0s
+
+#6 [app runtime 3/8] COPY --from=dependencies --chown=node:node /app/node_modules ./node_modules
+#6 CACHED
+
+#7 [app dependencies 3/4] COPY package.json package-lock.json ./
+#7 CACHED
+
+#8 [app runtime 4/8] COPY --chown=node:node package.json package-lock.json ./
+#8 CACHED
+
+#9 [app dependencies 2/4] WORKDIR /app
+#9 CACHED
+
+#10 [app dependencies 4/4] RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+#10 CACHED
+
+#11 [app runtime 5/8] COPY --chown=node:node src ./src
+#11 CACHED
+
+#12 [app runtime 6/8] COPY --chown=node:node scripts/import-history.js scripts/loadgen.js ./scripts/
+#12 DONE 0.0s
+
+#13 [app runtime 7/8] COPY --chown=node:node config/detection.json ./config/detection.json
+#13 DONE 0.0s
+
+#14 [app runtime 8/8] RUN mkdir logs artifacts && chown node:node logs artifacts
+#14 DONE 0.1s
+
+#15 [app] exporting to image
+#15 exporting layers 0.0s done
+#15 writing image sha256:62516094dcf1be16d92acf92c5d54e9d725bf45baddb894b60d97d0f5e960861 done
+#15 naming to docker.io/library/ue03-telemetry:local done
+#15 DONE 0.0s
+ Container ue03-rattrapage-prometheus-1  Running
+ Container ue03-rattrapage-loki-1  Running
+ Container ue03-rattrapage-app-1  Recreate
+ Container ue03-rattrapage-grafana-1  Running
+ Container ue03-rattrapage-app-1  Recreated
+ Container ue03-rattrapage-history-1  Recreate
+ Container ue03-rattrapage-loadgen-1  Recreate
+ Container ue03-rattrapage-history-1  Recreated
+ Container ue03-rattrapage-alloy-1  Recreate
+ Container ue03-rattrapage-loadgen-1  Recreated
+ Container ue03-rattrapage-alloy-1  Recreated
+ Container ue03-rattrapage-app-1  Starting
+ Container ue03-rattrapage-app-1  Started
+ Container ue03-rattrapage-history-1  Starting
+ Container ue03-rattrapage-app-1  Waiting
+ Container ue03-rattrapage-history-1  Started
+ Container ue03-rattrapage-history-1  Waiting
+ Container ue03-rattrapage-history-1  Exited
+ Container ue03-rattrapage-alloy-1  Starting
+ Container ue03-rattrapage-alloy-1  Started
+ Container ue03-rattrapage-app-1  Healthy
+ Container ue03-rattrapage-loadgen-1  Starting
+ Container ue03-rattrapage-loadgen-1  Started

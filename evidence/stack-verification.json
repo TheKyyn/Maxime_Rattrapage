@@ -1,0 +1,354 @@
+{
+  "verifiedAt": "2026-10-07T13:52:49.372131+00:00",
+  "historicalCounts": {
+    "game_completed": 779,
+    "perf_spike": 2110
+  },
+  "checks": [
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Combien de parties terminées ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"game_completed\"} [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "779"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Combien de victoires courtes ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"game_completed\"} | json shortWin=\"shortWin\" | shortWin=\"true\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "83"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Combien de retards de bots ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json staleBots=\"staleBots\" | staleBots=\"true\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "91"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Combien d’incohérences ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"invalid\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "70"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Quand les parties se terminent-elles ?",
+      "query": "sum by (map) (count_over_time({dataset=\"historical\",event=\"game_completed\"} | json map=\"map\" [1h]))",
+      "series": 5,
+      "points": 458,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Quand les victoires courtes se concentrent-elles ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"game_completed\"} | json shortWin=\"shortWin\" | shortWin=\"true\" [1h]))",
+      "series": 1,
+      "points": 6,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Sur quelles cartes les bots ont-ils du retard ?",
+      "query": "sum by (map) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json staleBots=\"staleBots\", map=\"map\" | staleBots=\"true\" [1h]))",
+      "series": 1,
+      "points": 27,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Quels clients envoient des données incohérentes ?",
+      "query": "sum by (clientId) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\", clientId=\"clientId\" | cause=\"invalid\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-integrite",
+      "panel": "Quelles parties examiner pour le farming ?",
+      "query": "{dataset=\"historical\",event=\"game_completed\"} | json | shortWin=\"true\" | line_format \"partie={{.serverId}} carte={{.map}} durée={{.durationSeconds}}s quarantaine={{.quarantined}} ligne={{.sourceLine}}\"",
+      "series": 20,
+      "points": 20,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Combien de rapports ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "2110"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Combien d’incohérences ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"invalid\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "70"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Combien de signatures overlay ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"overlay\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "262"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Combien d’onglets masqués ?",
+      "query": "sum(count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"hidden\" [605400s]))",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1790460600,
+          "158"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Quand les signatures apparaissent-elles ?",
+      "query": "sum by (cause) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" [1h]))",
+      "series": 7,
+      "points": 577,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Quelles signatures dominent ?",
+      "query": "sum by (cause) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\" [605400s]))",
+      "series": 7,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Quelle part d’overlay dans la cohorte par build ?",
+      "query": "((sum by (build) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" | cause=\"overlay\" [605400s]))) or ((sum by (build) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" [605400s]))) * 0)) / (sum by (build) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" [605400s])))",
+      "series": 5,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Quels navigateurs ont signalé l’overlay ?",
+      "query": "sum by (browser) (count_over_time({dataset=\"historical\",event=\"perf_spike\"} | json cause=\"cause\", browser=\"browser\" | cause=\"overlay\" [605400s]))",
+      "series": 5,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-performance",
+      "panel": "Quelles traces étayent la régression ?",
+      "query": "{dataset=\"historical\",event=\"perf_spike\"} | json | cause=\"overlay\" | line_format \"build={{.build}} client={{.clientId}} frame={{.frameMs}}ms rtt={{.rttMs}}ms largeur={{.width}} bloom={{.bloom}} ligne={{.sourceLine}}\"",
+      "series": 20,
+      "points": 20,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "API disponible ?",
+      "query": "up{job=\"telemetry\"}",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1791381168.21,
+          "1"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quel débit de requêtes ?",
+      "query": "game:api_request_rate:5m",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1791381168.212,
+          "14.693044305510554"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quel délai au p95 ?",
+      "query": "game:api_latency_p95:5m",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1791381168.212,
+          "0.009385416666666665"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quel taux de 5xx ?",
+      "query": "game:api_error_ratio:5m",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1791381168.213,
+          "0"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Combien de parties ?",
+      "query": "game_active",
+      "series": 1,
+      "points": 0,
+      "values": [
+        [
+          1791381168.214,
+          "3"
+        ]
+      ]
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Comment évolue le trafic par statut ?",
+      "query": "sum by (status) (rate(game_http_requests_total{route!=\"/healthz\"}[1m]))",
+      "series": 2,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "La charge ralentit-elle l’API ?",
+      "query": "game:api_latency_p95:5m",
+      "series": 1,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quelles signatures sont reçues en direct ?",
+      "query": "sum by (cause) (rate(game_reports_total[1m]))",
+      "series": 8,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quelle mémoire utilise le processus ?",
+      "query": "telemetry_process_resident_memory_bytes",
+      "series": 1,
+      "points": 0,
+      "values": null
+    },
+    {
+      "dashboard": "ue03-service",
+      "panel": "Quelles alertes sont actives ?",
+      "query": "ALERTS{alertstate=\"firing\"}",
+      "series": 3,
+      "points": 0,
+      "values": null
+    }
+  ],
+  "prometheusTargets": [
+    {
+      "discoveredLabels": {
+        "__address__": "localhost:9090",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__metrics_path__": "/metrics",
+        "__scheme__": "http",
+        "__scrape_interval__": "10s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "10s",
+        "job": "prometheus"
+      },
+      "labels": {
+        "instance": "localhost:9090",
+        "job": "prometheus"
+      },
+      "scrapePool": "prometheus",
+      "scrapeUrl": "http://localhost:9090/metrics",
+      "globalUrl": "http://5a37e0dd34c2:9090/metrics",
+      "lastError": "",
+      "lastScrape": "2026-10-07T13:52:37.808945172Z",
+      "lastScrapeDuration": 0.002263667,
+      "health": "up",
+      "scrapeInterval": "10s",
+      "scrapeTimeout": "10s"
+    },
+    {
+      "discoveredLabels": {
+        "__address__": "app:8080",
+        "__always_scrape_classic_histograms__": "false",
+        "__convert_classic_histograms_to_nhcb__": "false",
+        "__metrics_path__": "/metrics",
+        "__scheme__": "http",
+        "__scrape_interval__": "10s",
+        "__scrape_native_histograms__": "false",
+        "__scrape_timeout__": "10s",
+        "job": "telemetry"
+      },
+      "labels": {
+        "instance": "app:8080",
+        "job": "telemetry"
+      },
+      "scrapePool": "telemetry",
+      "scrapeUrl": "http://app:8080/metrics",
+      "globalUrl": "http://app:8080/metrics",
+      "lastError": "",
+      "lastScrape": "2026-10-07T13:52:43.590807924Z",
+      "lastScrapeDuration": 0.011656291,
+      "health": "up",
+      "scrapeInterval": "10s",
+      "scrapeTimeout": "10s"
+    }
+  ],
+  "ruleCount": 11,
+  "liveHttpRequests5m": "5714"
+}

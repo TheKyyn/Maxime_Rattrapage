@@ -1,0 +1,10 @@
+.git
+node_modules
+logs
+artifacts
+evidence
+docs
+*.pdf
+.env
+.DS_Store
+*.mp4

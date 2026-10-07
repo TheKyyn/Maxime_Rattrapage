@@ -1,0 +1,65 @@
+groups:
+  - name: telemetry
+    rules:
+      - record: game:api_request_rate:5m
+        expr: sum(rate(game_http_requests_total{route!="/healthz"}[5m]))
+      - record: game:api_error_ratio:5m
+        expr: sum(rate(game_http_requests_total{route!="/healthz",status=~"5.."}[5m])) / clamp_min(game:api_request_rate:5m, 0.001) or (game:api_request_rate:5m * 0)
+      - record: game:api_latency_p95:5m
+        expr: histogram_quantile(0.95, sum by (le) (rate(game_http_duration_seconds_bucket{route!="/healthz"}[5m])))
+      - alert: TelemetryUnavailable
+        expr: up{job="telemetry"} == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "L'API ne répond plus au scraping depuis une minute"
+          description: "Vérifier docker compose ps, /healthz et les logs startup/http_error."
+      - alert: ApiErrors
+        expr: game:api_error_ratio:5m > 0.05 and game:api_request_rate:5m > 1
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "Plus de 5 % de réponses 5xx sous trafic significatif"
+          description: "Seuil opérationnel initial ; distinguer 5xx et erreurs client 4xx."
+      - alert: ApiLatency
+        expr: game:api_latency_p95:5m > 0.25 and game:api_request_rate:5m > 1
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "Le p95 de l'API dépasse 250 ms"
+          description: "Comparer la charge et l'event loop ; le support simule un traitement synchrone."
+      - alert: OverlayRegression
+        expr: sum by (build, source) (increase(game_reports_total{cause="overlay"}[5m])) / clamp_min(sum by (build, source) (increase(game_reports_total{cause!~"invalid|hidden"}[5m])), 1) > 0.2 and sum by (build, source) (increase(game_reports_total{cause!~"invalid|hidden"}[5m])) >= 20
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "Plus de 20 % des rapports exploitables signalent l'overlay"
+          description: "Proportion parmi les rapports, pas parmi tous les joueurs. Contrôler la cohorte haute résolution/bloom dans Loki."
+      - alert: InvalidTelemetry
+        expr: sum by (source) (increase(game_reports_total{cause="invalid"}[5m])) >= 3
+        for: 1m
+        labels: { severity: warning }
+        annotations:
+          summary: "Au moins trois rapports incohérents en cinq minutes"
+          description: "Inspecter issues et clientId dans Loki. Un rapport client n'est pas une preuve de triche."
+      - alert: ShortWins
+        expr: increase(game_short_wins_total[5m]) >= 5
+        for: 1m
+        labels: { severity: warning }
+        annotations:
+          summary: "Au moins cinq victoires très courtes sur vault"
+          description: "Vérifier durée de jeu, score et répétition. Le compteur tient compte de SPEED."
+      - alert: ServerTickDegraded
+        expr: sum by (source) (increase(game_server_gap_reports_total[5m])) >= 5
+        for: 1m
+        labels: { severity: warning }
+        annotations:
+          summary: "Au moins cinq rapports avec un intervalle de tick anormal"
+          description: "Comparer RTT et état serveur ; un pic réseau client seul ne prouve pas une panne serveur."
+      - alert: StaleBotDecisions
+        expr: sum by (source, map) (increase(game_stale_bot_reports_total[5m])) >= 5
+        for: 1m
+        labels: { severity: warning }
+        annotations:
+          summary: "Au moins cinq rapports avec des décisions de bots périmées"
+          description: "Contrôler le serveur et la carte avant de suspecter les joueurs gagnants."

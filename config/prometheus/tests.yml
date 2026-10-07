@@ -1,0 +1,364 @@
+# Tests de sémantique des règles. Fixtures synthétiques, aucune preuve de trafic réel.
+rule_files:
+- rules.yml
+evaluation_interval: 15s
+fuzzy_compare: true
+tests:
+- name: indisponibilite-maintien-et-retour
+  interval: 1m
+  input_series:
+  - series: up{job="telemetry",instance="app:8080"}
+    values: 0 0 0 1+0x7
+  alert_rule_test:
+  - eval_time: 0m
+    alertname: TelemetryUnavailable
+    exp_alerts: []
+  - eval_time: 2m
+    alertname: TelemetryUnavailable
+    exp_alerts:
+    - exp_labels:
+        severity: critical
+        job: telemetry
+        instance: app:8080
+      exp_annotations:
+        summary: L'API ne répond plus au scraping depuis une minute
+        description: Vérifier docker compose ps, /healthz et les logs startup/http_error.
+  - eval_time: 5m
+    alertname: TelemetryUnavailable
+    exp_alerts: []
+- name: indisponibilite-pic-bref
+  interval: 1m
+  input_series:
+  - series: up{job="telemetry",instance="app:8080"}
+    values: 1 0 1+0x7
+  alert_rule_test:
+  - eval_time: 1m
+    alertname: TelemetryUnavailable
+    exp_alerts: []
+  - eval_time: 2m
+    alertname: TelemetryUnavailable
+    exp_alerts: []
+- name: 5xx-dix-pourcent-sous-trafic
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="500"}
+    values: 0+20x10
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+180x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiErrors
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+      exp_annotations:
+        summary: Plus de 5 % de réponses 5xx sous trafic significatif
+        description: Seuil opérationnel initial ; distinguer 5xx et erreurs client 4xx.
+  promql_expr_test:
+  - expr: game:api_error_ratio:5m
+    eval_time: 8m
+    exp_samples:
+    - labels: '{__name__="game:api_error_ratio:5m"}'
+      value: 0.1
+- name: 5xx-faible-trafic
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="500"}
+    values: 0+10x10
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+10x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiErrors
+    exp_alerts: []
+- name: 4xx-et-healthz-exclus-des-erreurs
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="400"}
+    values: 0+20x10
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+180x10
+  - series: game_http_requests_total{method="POST",route="/healthz",status="500"}
+    values: 0+120x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiErrors
+    exp_alerts: []
+  promql_expr_test:
+  - expr: game:api_error_ratio:5m
+    eval_time: 8m
+    exp_samples:
+    - labels: '{__name__="game:api_error_ratio:5m"}'
+      value: 0
+  - expr: game:api_request_rate:5m
+    eval_time: 8m
+    exp_samples:
+    - labels: '{__name__="game:api_request_rate:5m"}'
+      value: 3.3333333333333335
+- name: absence-de-donnees-reste-absente
+  interval: 1m
+  input_series: []
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiErrors
+    exp_alerts: []
+  - eval_time: 8m
+    alertname: ApiLatency
+    exp_alerts: []
+  - eval_time: 8m
+    alertname: OverlayRegression
+    exp_alerts: []
+  - eval_time: 8m
+    alertname: InvalidTelemetry
+    exp_alerts: []
+  - eval_time: 8m
+    alertname: StaleBotDecisions
+    exp_alerts: []
+  - eval_time: 8m
+    alertname: ShortWins
+    exp_alerts: []
+  promql_expr_test:
+  - expr: game:api_error_ratio:5m
+    eval_time: 8m
+    exp_samples: []
+  - expr: game:api_request_rate:5m
+    eval_time: 8m
+    exp_samples: []
+- name: overlay-denominateur-exclut-hidden-invalid
+  interval: 1m
+  input_series:
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="overlay"}
+    values: 0+20x10
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="render"}
+    values: 0+60x10
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="hidden"}
+    values: 0+20x10
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="invalid"}
+    values: 0+100x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: OverlayRegression
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        source: ingest
+        build: beta-20260926-6
+      exp_annotations:
+        summary: Plus de 20 % des rapports exploitables signalent l'overlay
+        description: Proportion parmi les rapports, pas parmi tous les joueurs. Contrôler la cohorte haute résolution/bloom dans Loki.
+- name: overlay-volume-insuffisant-malgre-forte-proportion
+  interval: 1m
+  input_series:
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="overlay"}
+    values: 0+2x10
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="render"}
+    values: 0+1x10
+  - series: game_reports_total{source="ingest",build="beta-20260924-3",cause="render"}
+    values: 0+100x10
+  - series: game_reports_total{source="simulation",build="beta-20260926-6",cause="render"}
+    values: 0+100x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: OverlayRegression
+    exp_alerts: []
+- name: overlay-sous-le-seuil-malgre-volume
+  interval: 1m
+  input_series:
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="overlay"}
+    values: 0+10x10
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="render"}
+    values: 0+90x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: OverlayRegression
+    exp_alerts: []
+- name: trois-invalides-declenchent-apres-delai
+  interval: 1m
+  input_series:
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="invalid"}
+    values: 0 0 3+0x8
+  alert_rule_test:
+  - eval_time: 2m
+    alertname: InvalidTelemetry
+    exp_alerts: []
+  - eval_time: 4m
+    alertname: InvalidTelemetry
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        source: ingest
+      exp_annotations:
+        summary: Au moins trois rapports incohérents en cinq minutes
+        description: Inspecter issues et clientId dans Loki. Un rapport client n'est pas une preuve de triche.
+- name: deux-invalides-ne-declenchent-pas
+  interval: 1m
+  input_series:
+  - series: game_reports_total{source="ingest",build="beta-20260926-6",cause="invalid"}
+    values: 0 0 2+0x8
+  alert_rule_test:
+  - eval_time: 4m
+    alertname: InvalidTelemetry
+    exp_alerts: []
+- name: premiere-rafale-bots-avec-baseline-zero
+  interval: 1m
+  input_series:
+  - series: game_stale_bot_reports_total{source="ingest",map="foundry"}
+    values: 0 5+0x9
+  alert_rule_test:
+  - eval_time: 1m
+    alertname: StaleBotDecisions
+    exp_alerts: []
+  - eval_time: 3m
+    alertname: StaleBotDecisions
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        source: ingest
+        map: foundry
+      exp_annotations:
+        summary: Au moins cinq rapports avec des décisions de bots périmées
+        description: Contrôler le serveur et la carte avant de suspecter les joueurs gagnants.
+- name: quatre-rapports-bots-restent-sous-seuil
+  interval: 1m
+  input_series:
+  - series: game_stale_bot_reports_total{source="ingest",map="foundry"}
+    values: 0 4+0x9
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: StaleBotDecisions
+    exp_alerts: []
+- name: sans-baseline-premiere-rafale-bots-perdue
+  interval: 1m
+  input_series:
+  - series: game_stale_bot_reports_total{source="ingest",map="foundry"}
+    values: _ 5+0x9
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: StaleBotDecisions
+    exp_alerts: []
+  promql_expr_test:
+  - expr: increase(game_stale_bot_reports_total[5m])
+    eval_time: 3m
+    exp_samples:
+    - labels: '{source="ingest",map="foundry"}'
+      value: 0
+- name: cinq-victoires-courtes-avec-delai
+  interval: 1m
+  input_series:
+  - series: game_short_wins_total{job="telemetry",instance="app:8080"}
+    values: 0 5+0x9
+  alert_rule_test:
+  - eval_time: 1m
+    alertname: ShortWins
+    exp_alerts: []
+  - eval_time: 3m
+    alertname: ShortWins
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        job: telemetry
+        instance: app:8080
+      exp_annotations:
+        summary: Au moins cinq victoires très courtes sur vault
+        description: Vérifier durée de jeu, score et répétition. Le compteur tient compte de SPEED.
+- name: quatre-victoires-courtes-ne-declenchent-pas
+  interval: 1m
+  input_series:
+  - series: game_short_wins_total{job="telemetry",instance="app:8080"}
+    values: 0 4+0x9
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: ShortWins
+    exp_alerts: []
+- name: cinq-rapports-tick-degrade
+  interval: 1m
+  input_series:
+  - series: game_server_gap_reports_total{source="simulation"}
+    values: 0 5+0x9
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: ServerTickDegraded
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        source: simulation
+      exp_annotations:
+        summary: Au moins cinq rapports avec un intervalle de tick anormal
+        description: Comparer RTT et état serveur ; un pic réseau client seul ne prouve pas une panne serveur.
+- name: quatre-rapports-tick-ne-declenchent-pas
+  interval: 1m
+  input_series:
+  - series: game_server_gap_reports_total{source="simulation"}
+    values: 0 4+0x9
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: ServerTickDegraded
+    exp_alerts: []
+- name: latence-p95-haute-sous-charge
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.1"}
+    values: 0+0x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.25"}
+    values: 0+0x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.5"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="+Inf"}
+    values: 0+120x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiLatency
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+      exp_annotations:
+        summary: Le p95 de l'API dépasse 250 ms
+        description: Comparer la charge et l'event loop ; le support simule un traitement synchrone.
+  promql_expr_test:
+  - expr: game:api_latency_p95:5m
+    eval_time: 8m
+    exp_samples:
+    - labels: '{__name__="game:api_latency_p95:5m"}'
+      value: 0.4875
+- name: latence-normale
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.1"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.25"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.5"}
+    values: 0+120x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="+Inf"}
+    values: 0+120x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiLatency
+    exp_alerts: []
+  promql_expr_test:
+  - expr: game:api_latency_p95:5m
+    eval_time: 8m
+    exp_samples:
+    - labels: '{__name__="game:api_latency_p95:5m"}'
+      value: 0.095
+- name: latence-haute-mais-trafic-trop-faible
+  interval: 1m
+  input_series:
+  - series: game_http_requests_total{method="POST",route="/api/reports",status="202"}
+    values: 0+30x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.1"}
+    values: 0+0x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.25"}
+    values: 0+0x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="0.5"}
+    values: 0+30x10
+  - series: game_http_duration_seconds_bucket{method="POST",route="/api/reports",le="+Inf"}
+    values: 0+30x10
+  alert_rule_test:
+  - eval_time: 8m
+    alertname: ApiLatency
+    exp_alerts: []

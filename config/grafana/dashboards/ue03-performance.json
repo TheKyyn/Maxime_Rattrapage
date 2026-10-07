@@ -1,0 +1,600 @@
+{
+  "uid": "ue03-performance",
+  "title": "UE03 · Performance côté joueur",
+  "description": "Rapports échantillonnés, signatures et cohorte haute résolution/bloom.",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "timezone": "Europe/Paris",
+  "tags": [
+    "UE03"
+  ],
+  "time": {
+    "from": "2026-09-19T22:00:00.000Z",
+    "to": "2026-09-26T22:10:00.000Z"
+  },
+  "refresh": "",
+  "panels": [
+    {
+      "id": 12,
+      "type": "text",
+      "title": "Comment lire ces résultats ?",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 3
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Les proportions concernent les **rapports de pics reçus**. La cohorte étudiée regroupe les rapports cohérents avec une largeur ≥ 2 560 px et bloom actif."
+      }
+    },
+    {
+      "id": 13,
+      "title": "Combien de rapports ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Combien d’incohérences ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 6,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"invalid\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Combien de signatures overlay ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"overlay\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Combien d’onglets masqués ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 18,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"hidden\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Quand les signatures apparaissent-elles ?",
+      "type": "timeseries",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 7,
+        "w": 14,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (cause) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" [1h]))",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "interval": "1h",
+      "description": "Comptage par heure ; la catégorie invalid reste visible mais exclue des statistiques de performance."
+    },
+    {
+      "id": 18,
+      "title": "Quelles signatures dominent ?",
+      "type": "bargauge",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 14,
+        "y": 7,
+        "w": 10,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (cause) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "orientation": "horizontal",
+        "displayMode": "basic",
+        "namePlacement": "top",
+        "textMode": "value_and_name"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Quelle part d’overlay dans la cohorte par build ?",
+      "type": "bargauge",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 14,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "((sum by (build) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" | cause=\"overlay\" [$__range]))) or ((sum by (build) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" [$__range]))) * 0)) / (sum by (build) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\", build=\"build\", width=\"width\", bloom=\"bloom\" | cause!=\"invalid\" | width >= 2560 | bloom=\"true\" | __error__=\"\" [$__range])))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percentunit",
+          "max": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "orientation": "horizontal",
+        "displayMode": "basic",
+        "namePlacement": "top",
+        "textMode": "value_and_name"
+      },
+      "description": "Cohorte : largeur ≥2560, bloom actif, rapports cohérents. La build -6 ne contient que 6 rapports dans cette cohorte : ne pas conclure à une amélioration."
+    },
+    {
+      "id": 20,
+      "title": "Quels navigateurs ont signalé l’overlay ?",
+      "type": "bargauge",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 14,
+        "y": 16,
+        "w": 10,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (browser) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\", browser=\"browser\" | cause=\"overlay\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "orientation": "horizontal",
+        "displayMode": "basic",
+        "namePlacement": "top",
+        "textMode": "value_and_name"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Quelles traces étayent la régression ?",
+      "type": "logs",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 25,
+        "w": 24,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "{dataset=\"$dataset\",event=\"perf_spike\"} | json | cause=\"overlay\" | line_format \"build={{.build}} client={{.clientId}} frame={{.frameMs}}ms rtt={{.rttMs}}ms largeur={{.width}} bloom={{.bloom}} ligne={{.sourceLine}}\"",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "showTime": true,
+        "wrapLogMessage": true,
+        "sortOrder": "Descending",
+        "showLabels": false,
+        "enableLogDetails": true
+      },
+      "description": "Ouvrir les détails de la ligne pour examiner report.work.details.renderOverlay, les timings et le serveur."
+    }
+  ],
+  "annotations": {
+    "list": []
+  },
+  "templating": {
+    "list": [
+      {
+        "type": "custom",
+        "name": "dataset",
+        "label": "Données",
+        "query": "historical,live",
+        "current": {
+          "text": "historical",
+          "value": "historical"
+        },
+        "options": [
+          {
+            "text": "historical",
+            "value": "historical",
+            "selected": true
+          },
+          {
+            "text": "live",
+            "value": "live",
+            "selected": false
+          }
+        ]
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "Santé du service",
+      "type": "link",
+      "url": "/d/ue03-service"
+    },
+    {
+      "title": "Performance — historique",
+      "type": "link",
+      "url": "/d/ue03-performance?from=1789855200000&to=1790460600000&var-dataset=historical"
+    },
+    {
+      "title": "Activité — historique",
+      "type": "link",
+      "url": "/d/ue03-integrite?from=1789855200000&to=1790460600000&var-dataset=historical"
+    },
+    {
+      "title": "Ce tableau en direct",
+      "type": "link",
+      "url": "/d/ue03-performance?from=now-15m&to=now&var-dataset=live"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+local.file_match "logs" {
+  path_targets = [
+    { __path__ = "/logs/live/telemetry.log", service_name = "game-telemetry", dataset = "live" },
+    { __path__ = "/logs/history/history.jsonl", service_name = "game-telemetry", dataset = "historical" },
+  ]
+}
+
+loki.source.file "logs" {
+  targets    = local.file_match.logs.targets
+  forward_to = [loki.process.events.receiver]
+}
+
+loki.process "events" {
+  stage.json {
+    expressions = { ts = "ts", event = "event", source = "source" }
+  }
+  stage.timestamp {
+    source = "ts"
+    format = "RFC3339Nano"
+    action_on_failure = "skip"
+  }
+  stage.labels {
+    values = { event = "", source = "" }
+  }
+  stage.label_drop {
+    values = ["filename"]
+  }
+  forward_to = [loki.write.local.receiver]
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}

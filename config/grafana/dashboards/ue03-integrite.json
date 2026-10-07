@@ -1,0 +1,589 @@
+{
+  "uid": "ue03-integrite",
+  "title": "UE03 · Activité et intégrité",
+  "description": "Parties, bots, répétitions et qualité des rapports.",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "timezone": "Europe/Paris",
+  "tags": [
+    "UE03"
+  ],
+  "time": {
+    "from": "2026-09-19T22:00:00.000Z",
+    "to": "2026-09-26T22:10:00.000Z"
+  },
+  "refresh": "",
+  "panels": [
+    {
+      "id": 22,
+      "type": "text",
+      "title": "Quels signaux exigent une investigation ?",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 3
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Victoires courtes, retards de bots et rapports incohérents : **trois signaux à examiner séparément**. Ils ne suffisent pas à prouver une triche."
+      }
+    },
+    {
+      "id": 23,
+      "title": "Combien de parties terminées ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"game_completed\"} [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Combien de victoires courtes ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 6,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"game_completed\"} | json shortWin=\"shortWin\" | shortWin=\"true\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Combien de retards de bots ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json staleBots=\"staleBots\" | staleBots=\"true\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Combien d’incohérences ?",
+      "type": "stat",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 18,
+        "y": 3,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\" | cause=\"invalid\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "blue"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Quand les parties se terminent-elles ?",
+      "type": "timeseries",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 7,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (map) (count_over_time({dataset=\"$dataset\",event=\"game_completed\"} | json map=\"map\" [1h]))",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "interval": "1h"
+    },
+    {
+      "id": 28,
+      "title": "Quand les victoires courtes se concentrent-elles ?",
+      "type": "timeseries",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 7,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum(count_over_time({dataset=\"$dataset\",event=\"game_completed\"} | json shortWin=\"shortWin\" | shortWin=\"true\" [1h]))",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "interval": "1h"
+    },
+    {
+      "id": 29,
+      "title": "Sur quelles cartes les bots ont-ils du retard ?",
+      "type": "timeseries",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (map) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json staleBots=\"staleBots\", map=\"map\" | staleBots=\"true\" [1h]))",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "interval": "1h"
+    },
+    {
+      "id": 30,
+      "title": "Quels clients envoient des données incohérentes ?",
+      "type": "table",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 9
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "sum by (clientId) (count_over_time({dataset=\"$dataset\",event=\"perf_spike\"} | json cause=\"cause\", clientId=\"clientId\" | cause=\"invalid\" [$__range]))",
+          "queryType": "instant",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true
+      },
+      "description": "clientId reste un champ JSON extrait à la requête, jamais un label indexé Loki ou Prometheus.",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true
+            },
+            "renameByName": {
+              "clientId": "Client",
+              "Value": "Rapports incohérents",
+              "Value #A": "Rapports incohérents"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Quelles parties examiner pour le farming ?",
+      "type": "logs",
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 25,
+        "w": 24,
+        "h": 10
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "{dataset=\"$dataset\",event=\"game_completed\"} | json | shortWin=\"true\" | line_format \"partie={{.serverId}} carte={{.map}} durée={{.durationSeconds}}s quarantaine={{.quarantined}} ligne={{.sourceLine}}\"",
+          "queryType": "range",
+          "legendFormat": "{{cause}}{{map}}{{status}}{{build}}{{browser}}{{clientId}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "showTime": true,
+        "wrapLogMessage": true,
+        "sortOrder": "Descending",
+        "showLabels": false,
+        "enableLogDetails": true
+      }
+    }
+  ],
+  "annotations": {
+    "list": []
+  },
+  "templating": {
+    "list": [
+      {
+        "type": "custom",
+        "name": "dataset",
+        "label": "Données",
+        "query": "historical,live",
+        "current": {
+          "text": "historical",
+          "value": "historical"
+        },
+        "options": [
+          {
+            "text": "historical",
+            "value": "historical",
+            "selected": true
+          },
+          {
+            "text": "live",
+            "value": "live",
+            "selected": false
+          }
+        ]
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "Santé du service",
+      "type": "link",
+      "url": "/d/ue03-service"
+    },
+    {
+      "title": "Performance — historique",
+      "type": "link",
+      "url": "/d/ue03-performance?from=1789855200000&to=1790460600000&var-dataset=historical"
+    },
+    {
+      "title": "Activité — historique",
+      "type": "link",
+      "url": "/d/ue03-integrite?from=1789855200000&to=1790460600000&var-dataset=historical"
+    },
+    {
+      "title": "Ce tableau en direct",
+      "type": "link",
+      "url": "/d/ue03-integrite?from=now-15m&to=now&var-dataset=live"
+    }
+  ]
+}

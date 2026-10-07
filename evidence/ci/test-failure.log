@@ -1,0 +1,48 @@
+
+> game-telemetry-demo@0.9.0 test
+> node --test
+
+✔ Paris : été, hiver et dates inexistantes ou ambiguës (15.012667ms)
+✔ les signatures du simulateur sont distinguées en v1 et v2 (1.506917ms)
+✔ un rapport incohérent est isolé avant toute classification de performance (0.170542ms)
+✔ physics et sous-détails de rendu restent validés avant la classification (0.483542ms)
+✔ des bots périmés forment un signal indépendant de la signature graphique (0.221666ms)
+✔ l’import distingue doublon, collision d’identifiant et bloc tronqué (2.195125ms)
+✔ le parseur reprend au bloc suivant après un JSON cassé (0.547625ms)
+✔ le temps accéléré du simulateur ne transforme pas les parties normales en farming (0.10525ms)
+✔ l’export fourni conserve ses volumes, ses v2 et ses données suspectes (323.427083ms)
+✔ GET /healthz (24.558084ms)
+✔ POST /api/reports refuse un corps invalide (12.246375ms)
+✔ POST /api/reports accepte un rapport valide et le journalise (3.187958ms)
+✖ démonstration contrôlée du blocage CI sur échec de test (0.783167ms)
+✔ les JSON invalides et 404 sont mesurés sans label de chemin arbitraire (39.327041ms)
+✔ un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes (1.038375ms)
+✔ un rapport v1 contient les champs attendus (1.000417ms)
+✔ un rapport v2 deplace rttMs dans network (0.150083ms)
+✔ l'export texte commence par l'en-tete console (14.9045ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 463.198584
+
+✖ failing tests:
+
+test at test/ci-gate.test.js:5:1
+✖ démonstration contrôlée du blocage CI sur échec de test (0.783167ms)
+  AssertionError [ERR_ASSERTION]: Échec demandé pour la démonstration du pipeline
+      at TestContext.<anonymous> (/Users/maximeth/Maxime_Rattrapage/test/ci-gate.test.js:6:10)
+      at Test.runInAsyncScope (node:async_hooks:213:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '1',
+    expected: '1',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

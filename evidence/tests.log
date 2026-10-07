@@ -1,0 +1,38 @@
+
+> game-telemetry-demo@0.9.0 verify
+> npm run lint && npm test
+
+
+> game-telemetry-demo@0.9.0 lint
+> eslint .
+
+
+> game-telemetry-demo@0.9.0 test
+> node --test
+
+✔ Paris : été, hiver et dates inexistantes ou ambiguës (29.18425ms)
+✔ les signatures du simulateur sont distinguées en v1 et v2 (1.582959ms)
+✔ un rapport incohérent est isolé avant toute classification de performance (0.178958ms)
+✔ physics et sous-détails de rendu restent validés avant la classification (0.617708ms)
+✔ des bots périmés forment un signal indépendant de la signature graphique (0.239709ms)
+✔ l’import distingue doublon, collision d’identifiant et bloc tronqué (3.284041ms)
+✔ le parseur reprend au bloc suivant après un JSON cassé (0.519334ms)
+✔ le temps accéléré du simulateur ne transforme pas les parties normales en farming (0.083584ms)
+✔ l’export fourni conserve ses volumes, ses v2 et ses données suspectes (347.809708ms)
+✔ GET /healthz (34.036291ms)
+✔ POST /api/reports refuse un corps invalide (16.376459ms)
+✔ POST /api/reports accepte un rapport valide et le journalise (3.131208ms)
+✔ démonstration contrôlée du blocage CI sur échec de test (0.392834ms)
+✔ les JSON invalides et 404 sont mesurés sans label de chemin arbitraire (36.773166ms)
+✔ un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes (1.551583ms)
+✔ un rapport v1 contient les champs attendus (0.987458ms)
+✔ un rapport v2 deplace rttMs dans network (0.1605ms)
+✔ l'export texte commence par l'en-tete console (28.54625ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 509.289584

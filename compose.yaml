@@ -1,0 +1,109 @@
+name: ue03-rattrapage
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    image: ue03-telemetry:local
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      LOG_FILE: /app/logs/telemetry.log
+      BUILD: beta-20260926-6
+      GAMES_PER_MINUTE: 4
+      SPEED: 10
+    ports: ["127.0.0.1:${APP_PORT:-8080}:8080"]
+    volumes:
+      - app-logs:/app/logs
+    tmpfs: [/tmp]
+    restart: unless-stopped
+
+  loadgen:
+    image: ue03-telemetry:local
+    pull_policy: never
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    command: ["node", "scripts/loadgen.js", "--url", "http://app:8080", "--rps", "5", "--burst-every", "120", "--burst-rps", "80"]
+    healthcheck:
+      disable: true
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: unless-stopped
+
+  history:
+    image: ue03-telemetry:local
+    pull_policy: never
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    command: ["node", "scripts/import-history.js", "/data/admin-export-2026-09-20_26.log", "/app/artifacts"]
+    healthcheck:
+      disable: true
+    volumes:
+      - ./data:/data:ro
+      - history-logs:/app/artifacts
+    depends_on:
+      app:
+        condition: service_started
+
+  loki:
+    image: grafana/loki:3.7.8@sha256:1107dd5274e0ada47e42472b7a7e71f3b2a2fe878878108f3e2f9e51528f0193
+    command: ["-config.file=/etc/loki/config.yaml"]
+    ports: ["127.0.0.1:${LOKI_PORT:-3100}:3100"]
+    volumes:
+      - ./config/loki/config.yaml:/etc/loki/config.yaml:ro
+      - loki-data:/loki
+    restart: unless-stopped
+
+  alloy:
+    image: grafana/alloy:v1.20.0@sha256:f111cce835516c5f99166342be7038496b52ced16667be5a11e19258a3e4cd30
+    command: ["run", "--storage.path=/var/lib/alloy", "/etc/alloy/config.alloy"]
+    volumes:
+      - ./config/alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - app-logs:/logs/live:ro
+      - history-logs:/logs/history:ro
+      - alloy-data:/var/lib/alloy
+    depends_on:
+      history:
+        condition: service_completed_successfully
+      loki:
+        condition: service_started
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3.15.0@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus", "--storage.tsdb.retention.time=15d"]
+    ports: ["127.0.0.1:${PROMETHEUS_PORT:-9090}:9090"]
+    volumes:
+      - ./config/prometheus:/etc/prometheus:ro
+      - prometheus-data:/prometheus
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:13.2.2@sha256:ac461fb352abc50da10a51c7d02462e9c05488f11f53f14b3ad79a8145f638a0
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-ue03-local-demo}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+    ports: ["127.0.0.1:${GRAFANA_PORT:-3000}:3000"]
+    volumes:
+      - ./config/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./config/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    depends_on: [loki, prometheus]
+    restart: unless-stopped
+
+volumes:
+  app-logs:
+  history-logs:
+  alloy-data:
+  loki-data:
+  prometheus-data:
+  grafana-data:

@@ -1,0 +1,10 @@
+{
+  "overlayMs": 200,
+  "shaderNewPrograms": 40,
+  "hiddenDelayMs": 800,
+  "worldDynamicsMs": 60,
+  "networkRttMs": 180,
+  "serverTickGapMs": 150,
+  "shortGameSeconds": 100,
+  "workToleranceMs": 3
+}

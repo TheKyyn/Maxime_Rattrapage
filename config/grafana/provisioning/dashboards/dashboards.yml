@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: UE03
+    folder: UE03 Observabilité
+    type: file
+    disableDeletion: false
+    editable: false
+    options:
+      path: /var/lib/grafana/dashboards

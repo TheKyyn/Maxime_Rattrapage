@@ -1,0 +1,40 @@
+auth_enabled: false
+server:
+  http_listen_port: 3100
+common:
+  instance_addr: 127.0.0.1
+  path_prefix: /loki
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+schema_config:
+  configs:
+    - from: 2026-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+limits_config:
+  # Nécessaire pour rejouer l'export avec ses vraies dates, même après la soutenance.
+  reject_old_samples: false
+  ingestion_rate_mb: 8
+  ingestion_burst_size_mb: 16
+  max_query_lookback: 0s
+analytics:
+  reporting_enabled: false
+querier:
+  # L'export est ancien : interroger aussi les chunks encore en mémoire.
+  query_ingesters_within: 0s
+ingester:
+  # Petit jeu historique : rendre les derniers chunks interrogeables rapidement.
+  chunk_idle_period: 30s
+  flush_check_period: 5s
+  wal:
+    flush_on_shutdown: true
