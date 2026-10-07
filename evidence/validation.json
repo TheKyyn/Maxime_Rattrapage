@@ -1,9 +1,8 @@
 {
-  "checkedAt": "2026-10-06T15:29:03.886732+00:00",
-  "localOnly": true,
+  "checkedAt": "2026-10-07T14:19:04.204873+00:00",
+  "localOnly": false,
   "node": "v25.2.1",
   "docker": "Docker version 24.0.2, build cb74dfc",
-  "existingCommit": "8660d8e491363b890856b8eb483a44cbf5895512",
   "tests": {
     "node": 18,
     "promtoolScenarios": 21,
@@ -13,6 +12,29 @@
   "scanNormalExit": 0,
   "testFailureExit": 1,
   "scanVulnerableExit": 1,
-  "githubActionsRuns": [],
-  "ghcrPublished": false
+  "githubActionsRuns": [
+    {
+      "scenario": "normal",
+      "id": 37634572207,
+      "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634572207",
+      "conclusion": "success"
+    },
+    {
+      "scenario": "test-failure",
+      "id": 37634867100,
+      "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634867100",
+      "conclusion": "failure"
+    },
+    {
+      "scenario": "critical-vulnerability",
+      "id": 37634872199,
+      "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634872199",
+      "conclusion": "failure"
+    }
+  ],
+  "ghcrPublished": true,
+  "validatedCommit": "03a85e53c34ce0c2411eb2508f527f44d2f777b2",
+  "ghcrImage": "ghcr.io/thekyyn/maxime_rattrapage:sha-03a85e53c34ce0c2411eb2508f527f44d2f777b2",
+  "ghcrManifestDigest": "sha256:e28baf516709ebe1bcc77e1a142e877e4b5718be1499a25eedd688f1a0b0cb8c",
+  "ghcrAnonymousManifestRead": true
 }

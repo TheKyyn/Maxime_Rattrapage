@@ -1,0 +1,721 @@
+validate	Set up job	﻿2026-10-07T14:11:07.3439244Z Current runner version: '2.337.0'
+validate	Set up job	2026-10-07T14:11:07.3464929Z ##[group]Runner Image Provisioner
+validate	Set up job	2026-10-07T14:11:07.3465942Z Hosted Compute Agent
+validate	Set up job	2026-10-07T14:11:07.3466614Z Version: 20260901.588
+validate	Set up job	2026-10-07T14:11:07.3467283Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+validate	Set up job	2026-10-07T14:11:07.3468137Z Build Date: 2026-09-01T19:56:44Z
+validate	Set up job	2026-10-07T14:11:07.3468838Z Worker ID: {d92b3c60-b077-413a-80f6-d48b1cea0add}
+validate	Set up job	2026-10-07T14:11:07.3469552Z Azure Region: westus3
+validate	Set up job	2026-10-07T14:11:07.3470468Z ##[endgroup]
+validate	Set up job	2026-10-07T14:11:07.3472218Z ##[group]Operating System
+validate	Set up job	2026-10-07T14:11:07.3472968Z Ubuntu
+validate	Set up job	2026-10-07T14:11:07.3473523Z 24.04.5
+validate	Set up job	2026-10-07T14:11:07.3474082Z LTS
+validate	Set up job	2026-10-07T14:11:07.3474747Z ##[endgroup]
+validate	Set up job	2026-10-07T14:11:07.3475338Z ##[group]Runner Image
+validate	Set up job	2026-10-07T14:11:07.3476003Z Image: ubuntu-24.04
+validate	Set up job	2026-10-07T14:11:07.3476617Z Version: 20260927.320.1
+validate	Set up job	2026-10-07T14:11:07.3477700Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+validate	Set up job	2026-10-07T14:11:07.3479558Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+validate	Set up job	2026-10-07T14:11:07.3480858Z ##[endgroup]
+validate	Set up job	2026-10-07T14:11:07.3482042Z ##[group]GITHUB_TOKEN Permissions
+validate	Set up job	2026-10-07T14:11:07.3484329Z Contents: read
+validate	Set up job	2026-10-07T14:11:07.3484996Z Metadata: read
+validate	Set up job	2026-10-07T14:11:07.3485669Z ##[endgroup]
+validate	Set up job	2026-10-07T14:11:07.3487796Z Secret source: Actions
+validate	Set up job	2026-10-07T14:11:07.3488759Z Cache mode: write
+validate	Set up job	2026-10-07T14:11:07.3489585Z Prepare workflow directory
+validate	Set up job	2026-10-07T14:11:07.3886737Z Prepare all required actions
+validate	Set up job	2026-10-07T14:11:07.3935085Z Getting action download info
+validate	Set up job	2026-10-07T14:11:07.7057559Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+validate	Set up job	2026-10-07T14:11:07.7983740Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+validate	Set up job	2026-10-07T14:11:07.9943439Z Complete job name: validate
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:11:08.0732578Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0733672Z with:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0734165Z   repository: TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0737898Z   token: ***
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0738353Z   ssh-strict: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0738820Z   ssh-user: git
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0739278Z   persist-credentials: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0739781Z   clean: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0740444Z   sparse-checkout-cone-mode: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0741005Z   fetch-depth: 1
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0741464Z   fetch-tags: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0741918Z   show-progress: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0742380Z   lfs: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0742807Z   submodules: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0743269Z   set-safe-directory: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0743838Z   allow-unsafe-pr-checkout: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.0744621Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1754502Z Syncing repository: TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1756805Z ##[group]Getting Git version info
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1757744Z Working directory is '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1759062Z [command]/usr/bin/git version
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1838660Z git version 2.55.0
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1917167Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1924355Z Temporarily overriding HOME='/home/runner/work/_temp/f478ec8b-4dac-4660-8f4a-df2b47ee0609' before making global git config changes
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1926655Z Adding repository directory to the temporary git global config as a safe directory
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1928097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1952012Z Deleting the contents of '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1956931Z ##[group]Initializing the repository
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.1962570Z [command]/usr/bin/git init /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2096943Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2098712Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2099773Z hint: to use in all of your new repositories, which will suppress this warning,
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2101211Z hint: call:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2101948Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2102586Z hint: 	git config --global init.defaultBranch <name>
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2103227Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2103828Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2104779Z hint: 'development'. The just-created branch can be renamed via this command:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2105520Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2105957Z hint: 	git branch -m <name>
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2106451Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2107119Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2113385Z Initialized empty Git repository in /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage/.git/
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2125379Z [command]/usr/bin/git remote add origin https://github.com/TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2196516Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2197371Z ##[group]Disabling automatic garbage collection
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2201652Z [command]/usr/bin/git config --local gc.auto 0
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2270742Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2271641Z ##[group]Setting up auth
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2282181Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2318355Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2709440Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2747912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.2975334Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.3014214Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.3247423Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.3288578Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.3289428Z ##[group]Fetching the repository
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:08.3298321Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +03a85e53c34ce0c2411eb2508f527f44d2f777b2:refs/remotes/origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1899621Z From https://github.com/TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1902861Z  * [new ref]         03a85e53c34ce0c2411eb2508f527f44d2f777b2 -> origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1909376Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1912303Z ##[group]Determining the checkout info
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1915459Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1917624Z [command]/usr/bin/git sparse-checkout disable
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.1969843Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2002468Z ##[group]Checking out the ref
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2005861Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2308510Z Switched to a new branch 'main'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2312840Z branch 'main' set up to track 'origin/main'.
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2321204Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2367170Z [command]/usr/bin/git log -1 --format=%H
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:09.2394792Z 03a85e53c34ce0c2411eb2508f527f44d2f777b2
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-10-07T14:11:09.2785430Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2787293Z with:
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2788175Z   node-version: 22
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2789127Z   cache: npm
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2790034Z   always-auth: false
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2791643Z   check-latest: false
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2801768Z   token: ***
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.2802681Z ##[endgroup]
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.4295642Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.4300179Z (node:2292) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.4301274Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.4304081Z ##[group]Environment details
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.7949685Z node: v22.23.3
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.7950696Z npm: 10.9.9
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.7951317Z yarn: 1.22.22
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.7953056Z ##[endgroup]
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.7996348Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:09.9657315Z /home/runner/.npm
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:10.2378129Z Cache hit for: node-cache-Linux-x64-npm-51bd0c26b187eed54b5afd8463f5d4657b1757eda2479d08f857e26f6b68132b
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:10.2490516Z (node:2292) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:11.3543041Z Received 4495471 of 4495471 (100.0%), 4.8 MBs/sec
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:11.3543712Z Cache Size: ~4 MB (4495471 B)
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:11.3573574Z [command]/usr/bin/tar -xf /home/runner/work/_temp/8622b8bc-db07-4e24-b393-b158aab86b1d/cache.tzst -P -C /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage --use-compress-program unzstd
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:11.4037298Z Cache restored successfully
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:11.4110945Z Cache restored from key: node-cache-Linux-x64-npm-51bd0c26b187eed54b5afd8463f5d4657b1757eda2479d08f857e26f6b68132b
+validate	Run npm ci --ignore-scripts	﻿2026-10-07T14:11:11.4224401Z ##[group]Run npm ci --ignore-scripts
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:11.4224798Z [36;1mnpm ci --ignore-scripts[0m
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:11.4481310Z shell: /usr/bin/bash -e {0}
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:11.4481634Z ##[endgroup]
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.3393720Z npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7146240Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7147262Z added 149 packages, and audited 150 packages in 2s
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7147825Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7148198Z 46 packages are looking for funding
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7148785Z   run `npm fund` for details
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7180842Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:11:13.7181260Z found 0 vulnerabilities
+validate	Run npm run lint	﻿2026-10-07T14:11:13.7693099Z ##[group]Run npm run lint
+validate	Run npm run lint	2026-10-07T14:11:13.7693410Z [36;1mnpm run lint[0m
+validate	Run npm run lint	2026-10-07T14:11:13.7758677Z shell: /usr/bin/bash -e {0}
+validate	Run npm run lint	2026-10-07T14:11:13.7758967Z ##[endgroup]
+validate	Run npm run lint	2026-10-07T14:11:13.8809453Z 
+validate	Run npm run lint	2026-10-07T14:11:13.8810401Z > game-telemetry-demo@0.9.0 lint
+validate	Run npm run lint	2026-10-07T14:11:13.8811055Z > eslint .
+validate	Run npm run lint	2026-10-07T14:11:13.8811312Z 
+validate	Run npm test	﻿2026-10-07T14:11:14.4783491Z ##[group]Run npm test
+validate	Run npm test	2026-10-07T14:11:14.4783776Z [36;1mnpm test[0m
+validate	Run npm test	2026-10-07T14:11:14.4846597Z shell: /usr/bin/bash -e {0}
+validate	Run npm test	2026-10-07T14:11:14.4846879Z env:
+validate	Run npm test	2026-10-07T14:11:14.4847079Z   UE03_DEMO_FAIL: 0
+validate	Run npm test	2026-10-07T14:11:14.4847287Z ##[endgroup]
+validate	Run npm test	2026-10-07T14:11:14.5959824Z 
+validate	Run npm test	2026-10-07T14:11:14.5960926Z > game-telemetry-demo@0.9.0 test
+validate	Run npm test	2026-10-07T14:11:14.5961419Z > node --test
+validate	Run npm test	2026-10-07T14:11:14.5961651Z 
+validate	Run npm test	2026-10-07T14:11:14.6718837Z TAP version 13
+validate	Run npm test	2026-10-07T14:11:15.7916310Z # Subtest: Paris : été, hiver et dates inexistantes ou ambiguës
+validate	Run npm test	2026-10-07T14:11:15.7941630Z ok 1 - Paris : été, hiver et dates inexistantes ou ambiguës
+validate	Run npm test	2026-10-07T14:11:15.7958925Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7971088Z   duration_ms: 47.470649
+validate	Run npm test	2026-10-07T14:11:15.7971828Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7972201Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7973010Z # Subtest: les signatures du simulateur sont distinguées en v1 et v2
+validate	Run npm test	2026-10-07T14:11:15.7974148Z ok 2 - les signatures du simulateur sont distinguées en v1 et v2
+validate	Run npm test	2026-10-07T14:11:15.7974881Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7975210Z   duration_ms: 4.497877
+validate	Run npm test	2026-10-07T14:11:15.7975599Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7975936Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7977327Z # Subtest: un rapport incohérent est isolé avant toute classification de performance
+validate	Run npm test	2026-10-07T14:11:15.7978656Z ok 3 - un rapport incohérent est isolé avant toute classification de performance
+validate	Run npm test	2026-10-07T14:11:15.7979395Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7979724Z   duration_ms: 0.483637
+validate	Run npm test	2026-10-07T14:11:15.7980446Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7980848Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7981770Z # Subtest: physics et sous-détails de rendu restent validés avant la classification
+validate	Run npm test	2026-10-07T14:11:15.7983052Z ok 4 - physics et sous-détails de rendu restent validés avant la classification
+validate	Run npm test	2026-10-07T14:11:15.7983858Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7984211Z   duration_ms: 2.251433
+validate	Run npm test	2026-10-07T14:11:15.7984610Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7984935Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7985783Z # Subtest: des bots périmés forment un signal indépendant de la signature graphique
+validate	Run npm test	2026-10-07T14:11:15.7987000Z ok 5 - des bots périmés forment un signal indépendant de la signature graphique
+validate	Run npm test	2026-10-07T14:11:15.7987711Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7988085Z   duration_ms: 0.646513
+validate	Run npm test	2026-10-07T14:11:15.7988487Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7988838Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7989911Z # Subtest: l’import distingue doublon, collision d’identifiant et bloc tronqué
+validate	Run npm test	2026-10-07T14:11:15.7991588Z ok 6 - l’import distingue doublon, collision d’identifiant et bloc tronqué
+validate	Run npm test	2026-10-07T14:11:15.7992220Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7992541Z   duration_ms: 5.367609
+validate	Run npm test	2026-10-07T14:11:15.7992898Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7993210Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7993898Z # Subtest: le parseur reprend au bloc suivant après un JSON cassé
+validate	Run npm test	2026-10-07T14:11:15.7995038Z ok 7 - le parseur reprend au bloc suivant après un JSON cassé
+validate	Run npm test	2026-10-07T14:11:15.7995645Z   ---
+validate	Run npm test	2026-10-07T14:11:15.7995997Z   duration_ms: 1.580175
+validate	Run npm test	2026-10-07T14:11:15.7996453Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.7996772Z   ...
+validate	Run npm test	2026-10-07T14:11:15.7997721Z # Subtest: le temps accéléré du simulateur ne transforme pas les parties normales en farming
+validate	Run npm test	2026-10-07T14:11:15.7998990Z ok 8 - le temps accéléré du simulateur ne transforme pas les parties normales en farming
+validate	Run npm test	2026-10-07T14:11:15.7999711Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8000036Z   duration_ms: 0.268133
+validate	Run npm test	2026-10-07T14:11:15.8000665Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8001054Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8001997Z # Subtest: l’export fourni conserve ses volumes, ses v2 et ses données suspectes
+validate	Run npm test	2026-10-07T14:11:15.8003256Z ok 9 - l’export fourni conserve ses volumes, ses v2 et ses données suspectes
+validate	Run npm test	2026-10-07T14:11:15.8003994Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8004340Z   duration_ms: 1007.417489
+validate	Run npm test	2026-10-07T14:11:15.8004744Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8005079Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8676153Z # Subtest: GET /healthz
+validate	Run npm test	2026-10-07T14:11:15.8676723Z ok 10 - GET /healthz
+validate	Run npm test	2026-10-07T14:11:15.8677328Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8677587Z   duration_ms: 89.729587
+validate	Run npm test	2026-10-07T14:11:15.8677990Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8678727Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8679188Z # Subtest: POST /api/reports refuse un corps invalide
+validate	Run npm test	2026-10-07T14:11:15.8679784Z ok 11 - POST /api/reports refuse un corps invalide
+validate	Run npm test	2026-10-07T14:11:15.8680495Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8680836Z   duration_ms: 41.49654
+validate	Run npm test	2026-10-07T14:11:15.8681237Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8681620Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8682376Z # Subtest: POST /api/reports accepte un rapport valide et le journalise
+validate	Run npm test	2026-10-07T14:11:15.8683289Z ok 12 - POST /api/reports accepte un rapport valide et le journalise
+validate	Run npm test	2026-10-07T14:11:15.8691124Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8701987Z   duration_ms: 20.313775
+validate	Run npm test	2026-10-07T14:11:15.8702532Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8702935Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8704017Z # Subtest: démonstration contrôlée du blocage CI sur échec de test
+validate	Run npm test	2026-10-07T14:11:15.8705209Z ok 13 - démonstration contrôlée du blocage CI sur échec de test
+validate	Run npm test	2026-10-07T14:11:15.8705772Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8706115Z   duration_ms: 1.248602
+validate	Run npm test	2026-10-07T14:11:15.8706513Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8706843Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8707690Z # Subtest: les JSON invalides et 404 sont mesurés sans label de chemin arbitraire
+validate	Run npm test	2026-10-07T14:11:15.8709389Z ok 14 - les JSON invalides et 404 sont mesurés sans label de chemin arbitraire
+validate	Run npm test	2026-10-07T14:11:15.8710162Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8710799Z   duration_ms: 129.828696
+validate	Run npm test	2026-10-07T14:11:15.8711254Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8711631Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8712731Z # Subtest: un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes
+validate	Run npm test	2026-10-07T14:11:15.8714281Z ok 15 - un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes
+validate	Run npm test	2026-10-07T14:11:15.8715138Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8715497Z   duration_ms: 5.672059
+validate	Run npm test	2026-10-07T14:11:15.8715956Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8716364Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8716941Z # Subtest: un rapport v1 contient les champs attendus
+validate	Run npm test	2026-10-07T14:11:15.8717745Z ok 16 - un rapport v1 contient les champs attendus
+validate	Run npm test	2026-10-07T14:11:15.8718315Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8718728Z   duration_ms: 2.705305
+validate	Run npm test	2026-10-07T14:11:15.8719159Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8719547Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8720097Z # Subtest: un rapport v2 deplace rttMs dans network
+validate	Run npm test	2026-10-07T14:11:15.8721107Z ok 17 - un rapport v2 deplace rttMs dans network
+validate	Run npm test	2026-10-07T14:11:15.8721663Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8722039Z   duration_ms: 0.467246
+validate	Run npm test	2026-10-07T14:11:15.8722470Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8722840Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8723444Z # Subtest: l'export texte commence par l'en-tete console
+validate	Run npm test	2026-10-07T14:11:15.8724256Z ok 18 - l'export texte commence par l'en-tete console
+validate	Run npm test	2026-10-07T14:11:15.8724847Z   ---
+validate	Run npm test	2026-10-07T14:11:15.8725190Z   duration_ms: 24.189215
+validate	Run npm test	2026-10-07T14:11:15.8725595Z   type: 'test'
+validate	Run npm test	2026-10-07T14:11:15.8726018Z   ...
+validate	Run npm test	2026-10-07T14:11:15.8726348Z 1..18
+validate	Run npm test	2026-10-07T14:11:15.8726650Z # tests 18
+validate	Run npm test	2026-10-07T14:11:15.8727004Z # suites 0
+validate	Run npm test	2026-10-07T14:11:15.8727342Z # pass 18
+validate	Run npm test	2026-10-07T14:11:15.8727649Z # fail 0
+validate	Run npm test	2026-10-07T14:11:15.8728011Z # cancelled 0
+validate	Run npm test	2026-10-07T14:11:15.8728412Z # skipped 0
+validate	Run npm test	2026-10-07T14:11:15.8728903Z # todo 0
+validate	Run npm test	2026-10-07T14:11:15.8729304Z # duration_ms 1238.734878
+validate	Run npm run import:history && npm run analyze	﻿2026-10-07T14:11:15.8841693Z ##[group]Run npm run import:history && npm run analyze
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.8842120Z [36;1mnpm run import:history && npm run analyze[0m
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.8905584Z shell: /usr/bin/bash -e {0}
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.8905862Z ##[endgroup]
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.9948384Z 
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.9949009Z > game-telemetry-demo@0.9.0 import:history
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.9949615Z > node scripts/import-history.js
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:15.9949837Z 
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0224012Z {
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0224742Z   "input": "data/admin-export-2026-09-20_26.log",
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0225488Z   "sha256": "4e4679501817517615eb5f9521fd9ff8a09fb256009ddb8794c49b8d34ee0e1b",
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0226076Z   "bytes": 6072091,
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0226387Z   "inputLines": 264344,
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0226734Z   "records": 2944,
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0227033Z   "counts": {
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0227319Z     "accepted": 2889,
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0227629Z     "duplicate": 55
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0227926Z   },
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0228189Z   "timezone": "Europe/Paris",
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0228569Z   "first": "2026-09-19T22:31:37.000Z",
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0228912Z   "last": "2026-09-26T22:04:13.000Z"
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.0229218Z }
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.1477023Z 
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.1477873Z > game-telemetry-demo@0.9.0 analyze
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.1478590Z > python3 scripts/analyze.py
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:17.1479002Z 
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0708338Z volumes: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0708849Z audit: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0709233Z quality_issues: 4 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0709646Z time_range: 1 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0710050Z daily_counts: 16 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0710871Z schema_rtt: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0711259Z gpu_missing: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0711639Z causes: 7 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0712011Z build_cohorts: 10 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0712410Z overlay_timeline: 5 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0712888Z overlay_population: 5 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0713649Z overlay_evidence: 5 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0714084Z invalid_clients: 1 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0714652Z short_wins: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0715051Z short_win_clients: 3 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0715436Z bots: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0715791Z bot_comparison: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0716234Z server_degradation: 3 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0716667Z largest_gaps: 10 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0717165Z missing_completions: 4 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0717644Z export_order: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0718146Z v2_stage_difference: 2 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0718627Z overlay_context: 1 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0719129Z build_first_valid: 5 ligne(s)
+validate	Run npm run import:history && npm run analyze	2026-10-07T14:11:22.0719660Z invariants: 3 ligne(s)
+validate	Vérifier les règles et leurs cas de test	﻿2026-10-07T14:11:22.0874465Z ##[group]Run docker run --rm --entrypoint /bin/promtool -v "$PWD/config/prometheus:/rules:ro" -w /rules prom/prometheus:v3.15.0@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e test rules tests.yml
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.0876025Z [36;1mdocker run --rm --entrypoint /bin/promtool -v "$PWD/config/prometheus:/rules:ro" -w /rules prom/prometheus:v3.15.0@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e test rules tests.yml[0m
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.0939323Z shell: /usr/bin/bash -e {0}
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.0939586Z ##[endgroup]
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.1975671Z Unable to find image 'prom/prometheus:v3.15.0@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e' locally
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.7841808Z docker.io/prom/prometheus@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e: Pulling from prom/prometheus
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9970379Z 487858d29734: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9971082Z 6bddf0169a34: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9971694Z 3859a559c288: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9972243Z 1e155d6744e4: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9972806Z e1db8b9e6f1c: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9973347Z fde357b1187c: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9973897Z 71af9fb8ff89: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9974430Z 4ce6fa7d0795: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9974949Z f9de78a4ea69: Pulling fs layer
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9975411Z e1db8b9e6f1c: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9975832Z fde357b1187c: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9976257Z 71af9fb8ff89: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9976669Z 4ce6fa7d0795: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9977074Z f9de78a4ea69: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:22.9977501Z 1e155d6744e4: Waiting
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.1668886Z 6bddf0169a34: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.1682989Z 487858d29734: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.1683605Z 487858d29734: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.2551552Z 487858d29734: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.3342109Z e1db8b9e6f1c: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.3764968Z 3859a559c288: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.3765967Z 3859a559c288: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5027409Z fde357b1187c: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5028609Z fde357b1187c: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5433924Z 71af9fb8ff89: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5434841Z 71af9fb8ff89: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5480770Z 1e155d6744e4: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.5503674Z 1e155d6744e4: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.7906728Z 4ce6fa7d0795: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.7907614Z f9de78a4ea69: Verifying Checksum
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.7908499Z f9de78a4ea69: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:23.7909223Z 4ce6fa7d0795: Download complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:25.3988044Z 6bddf0169a34: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.0443557Z 3859a559c288: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.5680016Z 1e155d6744e4: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.5829201Z e1db8b9e6f1c: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.5958126Z fde357b1187c: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.6036844Z 71af9fb8ff89: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.6119215Z 4ce6fa7d0795: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.6227592Z f9de78a4ea69: Pull complete
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.6264014Z Digest: sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:26.6271149Z Status: Downloaded newer image for prom/prometheus@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:27.2215132Z   SUCCESS
+validate	Vérifier les règles et leurs cas de test	2026-10-07T14:11:27.2215345Z 
+validate	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-10-07T14:11:27.3122431Z Post job cleanup.
+validate	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:27.4346643Z (node:2628) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:27.4347625Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate	Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:11:27.4351591Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-51bd0c26b187eed54b5afd8463f5d4657b1757eda2479d08f857e26f6b68132b, not saving cache.
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:11:27.4501938Z Post job cleanup.
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5359440Z [command]/usr/bin/git version
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5405160Z git version 2.55.0
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5448751Z Temporarily overriding HOME='/home/runner/work/_temp/a7034a5c-10f0-4d0a-a5df-54ffb1faf3be' before making global git config changes
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5450103Z Adding repository directory to the temporary git global config as a safe directory
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5458369Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5495125Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5531389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5789388Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5819923Z http.https://github.com/.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5831587Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.5873422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.6146032Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:27.6221795Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate	Complete job	﻿2026-10-07T14:11:27.6605428Z Cleaning up orphan processes
+validate	Complete job	2026-10-07T14:11:27.6970680Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+image	Set up job	﻿2026-10-07T14:11:33.2853077Z Current runner version: '2.337.0'
+image	Set up job	2026-10-07T14:11:33.2879986Z ##[group]Runner Image Provisioner
+image	Set up job	2026-10-07T14:11:33.2880837Z Hosted Compute Agent
+image	Set up job	2026-10-07T14:11:33.2881503Z Version: 20261002.596
+image	Set up job	2026-10-07T14:11:33.2882155Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+image	Set up job	2026-10-07T14:11:33.2882927Z Build Date: 2026-10-02T22:28:27Z
+image	Set up job	2026-10-07T14:11:33.2883688Z Worker ID: {651e3a4a-003d-4a79-b5da-00fbd8b72254}
+image	Set up job	2026-10-07T14:11:33.2884407Z Region: northcentralus
+image	Set up job	2026-10-07T14:11:33.2885011Z Cloud: Azure
+image	Set up job	2026-10-07T14:11:33.2885564Z ##[endgroup]
+image	Set up job	2026-10-07T14:11:33.2887262Z ##[group]Operating System
+image	Set up job	2026-10-07T14:11:33.2888029Z Ubuntu
+image	Set up job	2026-10-07T14:11:33.2888546Z 24.04.5
+image	Set up job	2026-10-07T14:11:33.2889488Z LTS
+image	Set up job	2026-10-07T14:11:33.2890071Z ##[endgroup]
+image	Set up job	2026-10-07T14:11:33.2890692Z ##[group]Runner Image
+image	Set up job	2026-10-07T14:11:33.2891367Z Image: ubuntu-24.04
+image	Set up job	2026-10-07T14:11:33.2891947Z Version: 20261004.327.1
+image	Set up job	2026-10-07T14:11:33.2892972Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+image	Set up job	2026-10-07T14:11:33.2895198Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+image	Set up job	2026-10-07T14:11:33.2896233Z ##[endgroup]
+image	Set up job	2026-10-07T14:11:33.2897604Z ##[group]GITHUB_TOKEN Permissions
+image	Set up job	2026-10-07T14:11:33.2899923Z Contents: read
+image	Set up job	2026-10-07T14:11:33.2900585Z Metadata: read
+image	Set up job	2026-10-07T14:11:33.2901134Z Packages: write
+image	Set up job	2026-10-07T14:11:33.2901754Z ##[endgroup]
+image	Set up job	2026-10-07T14:11:33.2903843Z Secret source: Actions
+image	Set up job	2026-10-07T14:11:33.2904921Z Cache mode: write
+image	Set up job	2026-10-07T14:11:33.2905843Z Prepare workflow directory
+image	Set up job	2026-10-07T14:11:33.3245319Z Prepare all required actions
+image	Set up job	2026-10-07T14:11:33.3293583Z Getting action download info
+image	Set up job	2026-10-07T14:11:33.6139322Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+image	Set up job	2026-10-07T14:11:33.7011535Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+image	Set up job	2026-10-07T14:11:33.9066643Z Complete job name: image
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:11:33.9834923Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9835992Z with:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9836450Z   repository: TheKyyn/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9840432Z   token: ***
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9840870Z   ssh-strict: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9841310Z   ssh-user: git
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9841751Z   persist-credentials: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9842233Z   clean: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9842671Z   sparse-checkout-cone-mode: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9843178Z   fetch-depth: 1
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9843594Z   fetch-tags: false
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9844042Z   show-progress: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9844477Z   lfs: false
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9844888Z   submodules: false
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9845327Z   set-safe-directory: true
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9845829Z   allow-unsafe-pr-checkout: false
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:33.9846637Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0876190Z Syncing repository: TheKyyn/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0879193Z ##[group]Getting Git version info
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0880631Z Working directory is '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0882505Z [command]/usr/bin/git version
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0959044Z git version 2.55.0
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.0998983Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1008376Z Temporarily overriding HOME='/home/runner/work/_temp/37fdf2f0-5c73-4307-a870-83496c5ec736' before making global git config changes
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1010632Z Adding repository directory to the temporary git global config as a safe directory
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1014435Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1076621Z Deleting the contents of '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1082122Z ##[group]Initializing the repository
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1087856Z [command]/usr/bin/git init /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1200882Z hint: Using 'master' as the name for the initial branch. This default branch name
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1202145Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1203123Z hint: to use in all of your new repositories, which will suppress this warning,
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1203860Z hint: call:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1204252Z hint:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1204765Z hint: 	git config --global init.defaultBranch <name>
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1205387Z hint:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1205959Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1206882Z hint: 'development'. The just-created branch can be renamed via this command:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1207942Z hint:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1208372Z hint: 	git branch -m <name>
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1208847Z hint:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1209467Z hint: Disable this message with "git config set advice.defaultBranchName false"
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1215521Z Initialized empty Git repository in /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage/.git/
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1229406Z [command]/usr/bin/git remote add origin https://github.com/TheKyyn/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1281043Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1282395Z ##[group]Disabling automatic garbage collection
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1286190Z [command]/usr/bin/git config --local gc.auto 0
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1320753Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1322141Z ##[group]Setting up auth
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1329336Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1371929Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1760120Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.1798284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2024816Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2062659Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2284852Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2325482Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2326894Z ##[group]Fetching the repository
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.2337421Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +03a85e53c34ce0c2411eb2508f527f44d2f777b2:refs/remotes/origin/main
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7775070Z From https://github.com/TheKyyn/Maxime_Rattrapage
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7777268Z  * [new ref]         03a85e53c34ce0c2411eb2508f527f44d2f777b2 -> origin/main
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7781717Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7783621Z ##[group]Determining the checkout info
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7785622Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7788841Z [command]/usr/bin/git sparse-checkout disable
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7848068Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7884931Z ##[group]Checking out the ref
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.7890430Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.8204759Z Switched to a new branch 'main'
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.8210384Z branch 'main' set up to track 'origin/main'.
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.8223343Z ##[endgroup]
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.8262683Z [command]/usr/bin/git log -1 --format=%H
+image	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:11:34.8292290Z 03a85e53c34ce0c2411eb2508f527f44d2f777b2
+image	Construire l'image applicative	﻿2026-10-07T14:11:34.8559500Z ##[group]Run docker build --target runtime -t ue03-telemetry:local .
+image	Construire l'image applicative	2026-10-07T14:11:34.8561644Z [36;1mdocker build --target runtime -t ue03-telemetry:local .[0m
+image	Construire l'image applicative	2026-10-07T14:11:34.8821366Z shell: /usr/bin/bash -e {0}
+image	Construire l'image applicative	2026-10-07T14:11:34.8822705Z ##[endgroup]
+image	Construire l'image applicative	2026-10-07T14:11:35.5208547Z #0 building with "default" instance using docker driver
+image	Construire l'image applicative	2026-10-07T14:11:35.5209589Z 
+image	Construire l'image applicative	2026-10-07T14:11:35.5209865Z #1 [internal] load build definition from Dockerfile
+image	Construire l'image applicative	2026-10-07T14:11:35.5210512Z #1 transferring dockerfile: 1.02kB done
+image	Construire l'image applicative	2026-10-07T14:11:35.5211066Z #1 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:35.5211309Z 
+image	Construire l'image applicative	2026-10-07T14:11:35.5211632Z #2 [auth] library/node:pull token for registry-1.docker.io
+image	Construire l'image applicative	2026-10-07T14:11:35.6709447Z #2 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:35.6709792Z 
+image	Construire l'image applicative	2026-10-07T14:11:35.6710453Z #3 [internal] load metadata for docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+image	Construire l'image applicative	2026-10-07T14:11:35.9121474Z #3 DONE 0.5s
+image	Construire l'image applicative	2026-10-07T14:11:36.0486609Z 
+image	Construire l'image applicative	2026-10-07T14:11:36.0487746Z #4 [internal] load .dockerignore
+image	Construire l'image applicative	2026-10-07T14:11:36.0488516Z #4 transferring context: 114B done
+image	Construire l'image applicative	2026-10-07T14:11:36.0489112Z #4 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:36.0489528Z 
+image	Construire l'image applicative	2026-10-07T14:11:36.0489774Z #5 [internal] load build context
+image	Construire l'image applicative	2026-10-07T14:11:36.0490254Z #5 transferring context: 104.39kB done
+image	Construire l'image applicative	2026-10-07T14:11:36.0490576Z #5 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:36.0490757Z 
+image	Construire l'image applicative	2026-10-07T14:11:36.0491402Z #6 [dependencies 1/4] FROM docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402
+image	Construire l'image applicative	2026-10-07T14:11:36.0493080Z #6 resolve docker.io/library/node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 done
+image	Construire l'image applicative	2026-10-07T14:11:36.0494374Z #6 sha256:f7f2d304681aaa935c9cfd180850cf616ae843efce7682873d6521ded7268937 15.73MB / 55.59MB 0.1s
+image	Construire l'image applicative	2026-10-07T14:11:36.0495104Z #6 sha256:e554276b05e6306c5ad33cd85bfa7f0693083e21f6114db5abf60a20fb413039 0B / 1.26MB 0.1s
+image	Construire l'image applicative	2026-10-07T14:11:36.0495784Z #6 sha256:d39db1cf9caa4f49c5a2e67111fbe6e0d5eea8ede550cb82f3dc2b79712688d6 0B / 447B 0.1s
+image	Construire l'image applicative	2026-10-07T14:11:36.0496517Z #6 sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 6.41kB / 6.41kB done
+image	Construire l'image applicative	2026-10-07T14:11:36.0497538Z #6 sha256:2c752226d477b4a886378baa95b9af252be59301b725fdb0b7e15208131505a8 1.72kB / 1.72kB done
+image	Construire l'image applicative	2026-10-07T14:11:36.0498303Z #6 sha256:7c3b093add7c43400ee83b815ab2cda98794a10045bcf76ce9bb2f89b97cbc5c 6.48kB / 6.48kB done
+image	Construire l'image applicative	2026-10-07T14:11:36.2426773Z #6 sha256:f7f2d304681aaa935c9cfd180850cf616ae843efce7682873d6521ded7268937 52.43MB / 55.59MB 0.2s
+image	Construire l'image applicative	2026-10-07T14:11:36.2428365Z #6 sha256:e554276b05e6306c5ad33cd85bfa7f0693083e21f6114db5abf60a20fb413039 1.26MB / 1.26MB 0.1s done
+image	Construire l'image applicative	2026-10-07T14:11:36.2429527Z #6 sha256:d39db1cf9caa4f49c5a2e67111fbe6e0d5eea8ede550cb82f3dc2b79712688d6 447B / 447B 0.1s done
+image	Construire l'image applicative	2026-10-07T14:11:36.2430286Z #6 extracting sha256:f7f2d304681aaa935c9cfd180850cf616ae843efce7682873d6521ded7268937
+image	Construire l'image applicative	2026-10-07T14:11:36.3471295Z #6 sha256:f7f2d304681aaa935c9cfd180850cf616ae843efce7682873d6521ded7268937 55.59MB / 55.59MB 0.2s done
+image	Construire l'image applicative	2026-10-07T14:11:37.7008894Z #6 extracting sha256:f7f2d304681aaa935c9cfd180850cf616ae843efce7682873d6521ded7268937 1.3s done
+image	Construire l'image applicative	2026-10-07T14:11:40.3531364Z #6 extracting sha256:e554276b05e6306c5ad33cd85bfa7f0693083e21f6114db5abf60a20fb413039
+image	Construire l'image applicative	2026-10-07T14:11:40.4565626Z #6 extracting sha256:e554276b05e6306c5ad33cd85bfa7f0693083e21f6114db5abf60a20fb413039 0.0s done
+image	Construire l'image applicative	2026-10-07T14:11:40.4567939Z #6 extracting sha256:d39db1cf9caa4f49c5a2e67111fbe6e0d5eea8ede550cb82f3dc2b79712688d6 done
+image	Construire l'image applicative	2026-10-07T14:11:40.4568836Z #6 DONE 4.5s
+image	Construire l'image applicative	2026-10-07T14:11:40.4569049Z 
+image	Construire l'image applicative	2026-10-07T14:11:40.4569359Z #7 [dependencies 2/4] WORKDIR /app
+image	Construire l'image applicative	2026-10-07T14:11:40.4569816Z #7 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:40.4570017Z 
+image	Construire l'image applicative	2026-10-07T14:11:40.4570308Z #8 [dependencies 3/4] COPY package.json package-lock.json ./
+image	Construire l'image applicative	2026-10-07T14:11:40.4570917Z #8 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:40.6071409Z 
+image	Construire l'image applicative	2026-10-07T14:11:40.6072214Z #9 [dependencies 4/4] RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+image	Construire l'image applicative	2026-10-07T14:11:41.9254924Z #9 1.469 npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+image	Construire l'image applicative	2026-10-07T14:11:42.2190224Z #9 1.762 
+image	Construire l'image applicative	2026-10-07T14:11:42.2191034Z #9 1.762 added 72 packages, and audited 73 packages in 1s
+image	Construire l'image applicative	2026-10-07T14:11:42.2191425Z #9 1.762 
+image	Construire l'image applicative	2026-10-07T14:11:42.3718121Z #9 1.762 28 packages are looking for funding
+image	Construire l'image applicative	2026-10-07T14:11:42.3718930Z #9 1.762   run `npm fund` for details
+image	Construire l'image applicative	2026-10-07T14:11:42.3719439Z #9 1.764 
+image	Construire l'image applicative	2026-10-07T14:11:42.3719803Z #9 1.764 found 0 vulnerabilities
+image	Construire l'image applicative	2026-10-07T14:11:42.3720250Z #9 1.765 npm notice
+image	Construire l'image applicative	2026-10-07T14:11:42.3720821Z #9 1.765 npm notice New major version of npm available! 10.9.9 -> 12.2.0
+image	Construire l'image applicative	2026-10-07T14:11:42.3721808Z #9 1.765 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+image	Construire l'image applicative	2026-10-07T14:11:42.3722768Z #9 1.765 npm notice To update run: npm install -g npm@12.2.0
+image	Construire l'image applicative	2026-10-07T14:11:42.3723454Z #9 1.765 npm notice
+image	Construire l'image applicative	2026-10-07T14:11:42.3886376Z #9 1.932 npm warn using --force Recommended protections disabled.
+image	Construire l'image applicative	2026-10-07T14:11:42.6353714Z #9 DONE 2.2s
+image	Construire l'image applicative	2026-10-07T14:11:42.8852302Z 
+image	Construire l'image applicative	2026-10-07T14:11:42.8853216Z #10 [runtime 3/8] COPY --from=dependencies --chown=node:node /app/node_modules ./node_modules
+image	Construire l'image applicative	2026-10-07T14:11:42.9133119Z #10 DONE 0.2s
+image	Construire l'image applicative	2026-10-07T14:11:43.0924281Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.0926601Z #11 [runtime 4/8] COPY --chown=node:node package.json package-lock.json ./
+image	Construire l'image applicative	2026-10-07T14:11:43.0929400Z #11 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:43.0929955Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.0930433Z #12 [runtime 5/8] COPY --chown=node:node src ./src
+image	Construire l'image applicative	2026-10-07T14:11:43.0931332Z #12 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:43.0931562Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.0932034Z #13 [runtime 6/8] COPY --chown=node:node scripts/import-history.js scripts/loadgen.js ./scripts/
+image	Construire l'image applicative	2026-10-07T14:11:43.0933013Z #13 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:43.0933243Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.0933931Z #14 [runtime 7/8] COPY --chown=node:node config/detection.json ./config/detection.json
+image	Construire l'image applicative	2026-10-07T14:11:43.0934639Z #14 DONE 0.0s
+image	Construire l'image applicative	2026-10-07T14:11:43.0935122Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.0935478Z #15 [runtime 8/8] RUN mkdir logs artifacts && chown node:node logs artifacts
+image	Construire l'image applicative	2026-10-07T14:11:43.0936367Z #15 DONE 0.1s
+image	Construire l'image applicative	2026-10-07T14:11:43.2457616Z 
+image	Construire l'image applicative	2026-10-07T14:11:43.2458604Z #16 exporting to image
+image	Construire l'image applicative	2026-10-07T14:11:43.2459464Z #16 exporting layers
+image	Construire l'image applicative	2026-10-07T14:11:44.0197768Z #16 exporting layers 0.9s done
+image	Construire l'image applicative	2026-10-07T14:11:44.0371338Z #16 writing image sha256:8acae5eedbbdf6a12a00a5533563b8331fb3a209eefdf3cc6ba2b887993f4bbb done
+image	Construire l'image applicative	2026-10-07T14:11:44.0372813Z #16 naming to docker.io/library/ue03-telemetry:local done
+image	Construire l'image applicative	2026-10-07T14:11:44.0373848Z #16 DONE 0.9s
+image	Bloquer toute vulnérabilité critique	﻿2026-10-07T14:11:44.0641046Z ##[group]Run image=ue03-telemetry:local
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0641435Z [36;1mimage=ue03-telemetry:local[0m
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0641882Z [36;1mif [ "$SCENARIO" = critical-vulnerability ]; then image=ue03-critical-demo:local; fi[0m
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0642359Z [36;1msh ci/scan-image.sh "$image"[0m
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0707789Z shell: /usr/bin/bash -e {0}
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0708058Z env:
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0708251Z   SCENARIO: 
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:44.0708461Z ##[endgroup]
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.5174732Z Unable to find image 'aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969' locally
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.7859465Z docker.io/aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969: Pulling from aquasec/trivy
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9139709Z 55afa1ecc21d: Already exists
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9165523Z 0c664a59f299: Pulling fs layer
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9166229Z 9b17763e725d: Pulling fs layer
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9166653Z 99f1ca71a2b5: Pulling fs layer
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9878541Z 99f1ca71a2b5: Verifying Checksum
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:45.9879108Z 99f1ca71a2b5: Download complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:46.0218761Z 0c664a59f299: Download complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:46.1670022Z 9b17763e725d: Verifying Checksum
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:46.1670594Z 9b17763e725d: Download complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:46.5957593Z 0c664a59f299: Pull complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.4014255Z 9b17763e725d: Pull complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.4149133Z 99f1ca71a2b5: Pull complete
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.4201499Z Digest: sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.4207912Z Status: Downloaded newer image for aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.6711985Z 2026-10-07T14:11:47Z	INFO	[vulndb] Need to update DB
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.6712779Z 2026-10-07T14:11:47Z	INFO	[vulndb] Downloading vulnerability DB...
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:47.6713633Z 2026-10-07T14:11:47Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.0511121Z 24.70 MiB / 119.53 MiB [------------>_______________________________________________] 20.67% ? p/s ?79.05 MiB / 119.53 MiB [--------------------------------------->____________________] 66.13% ? p/s ?119.53 MiB / 119.53 MiB [--------------------------------------------------------->] 100.00% ? p/s ?119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 157.88 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 157.88 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 157.88 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.69 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.69 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 147.69 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.17 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.17 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 138.17 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.25 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.25 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 129.25 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.91 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.91 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 120.91 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 113.11 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [------------------------------------------->] 100.00% 113.11 MiB p/s ETA 0s119.53 MiB / 119.53 MiB [-----------------------------------------------] 100.00% 31.13 MiB p/s 4.0s2026-10-07T14:11:52Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.1928515Z 2026-10-07T14:11:52Z	INFO	[vuln] Vulnerability scanning is enabled
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7608692Z 2026-10-07T14:11:52Z	INFO	Detected OS	family="alpine" version="3.24.2"
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7610138Z 2026-10-07T14:11:52Z	WARN	This OS version is not on the EOL list	family="alpine" version="3.24"
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7611881Z 2026-10-07T14:11:52Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=18
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7622504Z 2026-10-07T14:11:52Z	INFO	Number of language-specific files	num=1
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7623631Z 2026-10-07T14:11:52Z	INFO	[node-pkg] Detecting vulnerabilities...
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7677900Z 2026-10-07T14:11:52Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7713875Z 
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7714287Z 📣 [34mNotices:[0m
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7714745Z   - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7715141Z 
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7715374Z To suppress version checks, run Trivy scans with the --skip-version-check flag
+image	Bloquer toute vulnérabilité critique	2026-10-07T14:11:52.7715704Z 
+image	Conserver le rapport du scanner même en cas d'échec	﻿2026-10-07T14:11:52.8865326Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8866038Z with:
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8866354Z   name: scan-trivy-37634572207
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8867283Z   path: artifacts/ci/trivy.json
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8867733Z   if-no-files-found: warn
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8868138Z   compression-level: 6
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8868499Z   overwrite: false
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8868853Z   include-hidden-files: false
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:52.8869254Z ##[endgroup]
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.0569519Z (node:2643) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.0570863Z (Use `node --trace-deprecation ...` to show where the warning was created)
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.0678329Z With the provided path, there will be 1 file uploaded
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.0698175Z Artifact name is valid!
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.0698632Z Root directory input is valid!
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.3523346Z Beginning upload of artifact content to blob storage
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.3762285Z (node:2643) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.4738107Z Uploaded bytes 17894
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.5027919Z Finished uploading artifact content to blob storage!
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.5029304Z SHA256 digest of uploaded artifact zip is 0950ed942ec3dbaf9667ecac0540b48edbc7bb83c62ab7c8bec0deb03320c637
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.5031226Z Finalizing artifact upload
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.7289611Z Artifact scan-trivy-37634572207.zip successfully finalized. Artifact ID 11487349528
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.7291575Z Artifact scan-trivy-37634572207 has been successfully uploaded! Final size is 17894 bytes. Artifact ID is 11487349528
+image	Conserver le rapport du scanner même en cas d'échec	2026-10-07T14:11:53.7298193Z Artifact download URL: https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634572207/artifacts/11487349528
+image	Publier l'image validée dans GHCR	﻿2026-10-07T14:11:53.7450341Z ##[group]Run registry="ghcr.io/${GITHUB_REPOSITORY,,}"
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7450777Z [36;1mregistry="ghcr.io/${GITHUB_REPOSITORY,,}"[0m
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7451290Z [36;1mprintf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin[0m
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7451854Z [36;1mdocker tag ue03-telemetry:local "$registry:sha-$GITHUB_SHA"[0m
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7452529Z [36;1mdocker push "$registry:sha-$GITHUB_SHA"[0m
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7516375Z shell: /usr/bin/bash -e {0}
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7516639Z env:
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7519377Z   GHCR_TOKEN: ***
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:53.7519610Z ##[endgroup]
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0545148Z 
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0545735Z Login Succeeded
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0547284Z WARNING! Your credentials are stored unencrypted in '/home/runner/.docker/config.json'.
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0548464Z Configure a credential helper to remove this warning. See
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0557997Z https://docs.docker.com/go/credential-store/
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0558433Z 
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.0924159Z The push refers to repository [ghcr.io/thekyyn/maxime_rattrapage]
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1614545Z aa3124544be4: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1615033Z f4f6bf3dcb5c: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1615452Z da64f311c50f: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1615832Z 2a76b3af1be2: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1616198Z f939e9f81591: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1616557Z 1797e42bf302: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1617112Z 2b3b403f0b5c: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1617496Z ff5db628aec4: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1617866Z 50a35fcbb91b: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1618230Z ba3263475f99: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1618595Z 74d97c428c51: Preparing
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1621646Z 1797e42bf302: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1623056Z 2b3b403f0b5c: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1624665Z ff5db628aec4: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1625510Z 50a35fcbb91b: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1626021Z ba3263475f99: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:54.1626392Z 74d97c428c51: Waiting
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:55.6702130Z da64f311c50f: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:55.7724349Z f4f6bf3dcb5c: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:55.8294071Z 2a76b3af1be2: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:55.8768055Z f939e9f81591: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:56.7389828Z 50a35fcbb91b: Layer already exists
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:56.7422705Z ff5db628aec4: Layer already exists
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:56.8248045Z 74d97c428c51: Layer already exists
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:56.8312153Z ba3263475f99: Layer already exists
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:57.7206470Z 1797e42bf302: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:57.8372480Z aa3124544be4: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:57.9322249Z 2b3b403f0b5c: Pushed
+image	Publier l'image validée dans GHCR	2026-10-07T14:11:59.9807608Z sha-03a85e53c34ce0c2411eb2508f527f44d2f777b2: digest: sha256:e28baf516709ebe1bcc77e1a142e877e4b5718be1499a25eedd688f1a0b0cb8c size: 2615
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:11:59.9956514Z Post job cleanup.
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0843762Z [command]/usr/bin/git version
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0889752Z git version 2.55.0
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0930317Z Temporarily overriding HOME='/home/runner/work/_temp/c536ae9e-0659-4640-bbe1-a9c677f5387c' before making global git config changes
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0931998Z Adding repository directory to the temporary git global config as a safe directory
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0936151Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.0977857Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1016023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1291536Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1323896Z http.https://github.com/.extraheader
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1345020Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1374024Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1643321Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+image	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:12:00.1681185Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+image	Complete job	﻿2026-10-07T14:12:00.2143399Z Cleaning up orphan processes
+image	Complete job	2026-10-07T14:12:00.2632159Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

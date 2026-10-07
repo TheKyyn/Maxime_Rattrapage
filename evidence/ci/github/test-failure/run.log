@@ -1,0 +1,310 @@
+validate	Set up job	﻿2026-10-07T14:13:17.9450835Z Current runner version: '2.337.0'
+validate	Set up job	2026-10-07T14:13:17.9488907Z ##[group]Runner Image Provisioner
+validate	Set up job	2026-10-07T14:13:17.9490353Z Hosted Compute Agent
+validate	Set up job	2026-10-07T14:13:17.9491480Z Version: 20261002.596
+validate	Set up job	2026-10-07T14:13:17.9492746Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+validate	Set up job	2026-10-07T14:13:17.9494077Z Build Date: 2026-10-02T22:28:27Z
+validate	Set up job	2026-10-07T14:13:17.9495261Z Worker ID: {2ccce9b7-1315-44a3-b976-bdcaa09013af}
+validate	Set up job	2026-10-07T14:13:17.9496698Z Region: eastus
+validate	Set up job	2026-10-07T14:13:17.9498081Z Cloud: Azure
+validate	Set up job	2026-10-07T14:13:17.9499165Z ##[endgroup]
+validate	Set up job	2026-10-07T14:13:17.9501478Z ##[group]Operating System
+validate	Set up job	2026-10-07T14:13:17.9502618Z Ubuntu
+validate	Set up job	2026-10-07T14:13:17.9503678Z 24.04.5
+validate	Set up job	2026-10-07T14:13:17.9504666Z LTS
+validate	Set up job	2026-10-07T14:13:17.9505582Z ##[endgroup]
+validate	Set up job	2026-10-07T14:13:17.9506473Z ##[group]Runner Image
+validate	Set up job	2026-10-07T14:13:17.9507750Z Image: ubuntu-24.04
+validate	Set up job	2026-10-07T14:13:17.9508857Z Version: 20261004.327.1
+validate	Set up job	2026-10-07T14:13:17.9510796Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+validate	Set up job	2026-10-07T14:13:17.9513966Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+validate	Set up job	2026-10-07T14:13:17.9515823Z ##[endgroup]
+validate	Set up job	2026-10-07T14:13:17.9518412Z ##[group]GITHUB_TOKEN Permissions
+validate	Set up job	2026-10-07T14:13:17.9522077Z Contents: read
+validate	Set up job	2026-10-07T14:13:17.9523013Z Metadata: read
+validate	Set up job	2026-10-07T14:13:17.9523995Z ##[endgroup]
+validate	Set up job	2026-10-07T14:13:17.9527327Z Secret source: Actions
+validate	Set up job	2026-10-07T14:13:17.9529065Z Cache mode: write
+validate	Set up job	2026-10-07T14:13:17.9530289Z Prepare workflow directory
+validate	Set up job	2026-10-07T14:13:18.0026097Z Prepare all required actions
+validate	Set up job	2026-10-07T14:13:18.0102739Z Getting action download info
+validate	Set up job	2026-10-07T14:13:18.2489189Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+validate	Set up job	2026-10-07T14:13:18.3391452Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+validate	Set up job	2026-10-07T14:13:18.5400639Z Complete job name: validate
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:13:18.6240867Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6241976Z with:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6242467Z   repository: TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6246474Z   token: ***
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6247133Z   ssh-strict: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6247640Z   ssh-user: git
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6248108Z   persist-credentials: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6248604Z   clean: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6249060Z   sparse-checkout-cone-mode: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6249585Z   fetch-depth: 1
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6250030Z   fetch-tags: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6250478Z   show-progress: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6250932Z   lfs: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6251348Z   submodules: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6251806Z   set-safe-directory: true
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6252311Z   allow-unsafe-pr-checkout: false
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.6253190Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7337310Z Syncing repository: TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7340412Z ##[group]Getting Git version info
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7341956Z Working directory is '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7343868Z [command]/usr/bin/git version
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7432905Z git version 2.55.0
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7475282Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7485660Z Temporarily overriding HOME='/home/runner/work/_temp/75fb6556-e9fc-46cb-a10f-26c81ca7821a' before making global git config changes
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7487539Z Adding repository directory to the temporary git global config as a safe directory
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7489677Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7550664Z Deleting the contents of '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7556393Z ##[group]Initializing the repository
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7562358Z [command]/usr/bin/git init /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7681358Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7683479Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7685217Z hint: to use in all of your new repositories, which will suppress this warning,
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7686145Z hint: call:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7686602Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7687901Z hint: 	git config --global init.defaultBranch <name>
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7688752Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7689559Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7691286Z hint: 'development'. The just-created branch can be renamed via this command:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7692510Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7692963Z hint: 	git branch -m <name>
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7693452Z hint:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7694093Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7695231Z Initialized empty Git repository in /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage/.git/
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7699871Z [command]/usr/bin/git remote add origin https://github.com/TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7759589Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7760544Z ##[group]Disabling automatic garbage collection
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7763999Z [command]/usr/bin/git config --local gc.auto 0
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7808588Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7809480Z ##[group]Setting up auth
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7818036Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.7858508Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8299602Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8341637Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8625436Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8668171Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8918287Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8967817Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.8968832Z ##[group]Fetching the repository
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:18.9001145Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +03a85e53c34ce0c2411eb2508f527f44d2f777b2:refs/remotes/origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2261249Z From https://github.com/TheKyyn/Maxime_Rattrapage
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2262406Z  * [new ref]         03a85e53c34ce0c2411eb2508f527f44d2f777b2 -> origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2266713Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2267931Z ##[group]Determining the checkout info
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2270350Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2276390Z [command]/usr/bin/git sparse-checkout disable
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2334558Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2374110Z ##[group]Checking out the ref
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2380384Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2694930Z Switched to a new branch 'main'
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2700401Z branch 'main' set up to track 'origin/main'.
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2707790Z ##[endgroup]
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2831582Z [command]/usr/bin/git log -1 --format=%H
+validate	Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:19.2832944Z 03a85e53c34ce0c2411eb2508f527f44d2f777b2
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	﻿2026-10-07T14:13:19.3142636Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3143603Z with:
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3144095Z   node-version: 22
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3144590Z   cache: npm
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3145306Z   always-auth: false
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3145834Z   check-latest: false
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3150339Z   token: ***
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.3150843Z ##[endgroup]
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.4678512Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.4684241Z (node:2292) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.4685838Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.4688147Z ##[group]Environment details
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.8786330Z node: v22.23.3
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.8788388Z npm: 10.9.9
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.8789104Z yarn: 1.22.22
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.8790563Z ##[endgroup]
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:19.8832190Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.0397638Z /home/runner/.npm
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.1327196Z Cache hit for: node-cache-Linux-x64-npm-51bd0c26b187eed54b5afd8463f5d4657b1757eda2479d08f857e26f6b68132b
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.1446405Z (node:2292) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.2565723Z Received 4495471 of 4495471 (100.0%), 47.1 MBs/sec
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.2568332Z Cache Size: ~4 MB (4495471 B)
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.2597275Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d7d8a25d-ed9e-4b86-8253-551dc501a6d6/cache.tzst -P -C /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage --use-compress-program unzstd
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.3078529Z Cache restored successfully
+validate	Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020	2026-10-07T14:13:20.3089190Z Cache restored from key: node-cache-Linux-x64-npm-51bd0c26b187eed54b5afd8463f5d4657b1757eda2479d08f857e26f6b68132b
+validate	Run npm ci --ignore-scripts	﻿2026-10-07T14:13:20.3331320Z ##[group]Run npm ci --ignore-scripts
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:20.3332916Z [36;1mnpm ci --ignore-scripts[0m
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:20.3593331Z shell: /usr/bin/bash -e {0}
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:20.3594758Z ##[endgroup]
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.2778216Z npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6574842Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6576182Z added 149 packages, and audited 150 packages in 2s
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6577145Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6577566Z 46 packages are looking for funding
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6578191Z   run `npm fund` for details
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6587141Z 
+validate	Run npm ci --ignore-scripts	2026-10-07T14:13:22.6587536Z found 0 vulnerabilities
+validate	Run npm run lint	﻿2026-10-07T14:13:22.7061716Z ##[group]Run npm run lint
+validate	Run npm run lint	2026-10-07T14:13:22.7062058Z [36;1mnpm run lint[0m
+validate	Run npm run lint	2026-10-07T14:13:22.7129544Z shell: /usr/bin/bash -e {0}
+validate	Run npm run lint	2026-10-07T14:13:22.7129875Z ##[endgroup]
+validate	Run npm run lint	2026-10-07T14:13:22.8246554Z 
+validate	Run npm run lint	2026-10-07T14:13:22.8247654Z > game-telemetry-demo@0.9.0 lint
+validate	Run npm run lint	2026-10-07T14:13:22.8248123Z > eslint .
+validate	Run npm run lint	2026-10-07T14:13:22.8248327Z 
+validate	Run npm test	﻿2026-10-07T14:13:23.4785079Z ##[group]Run npm test
+validate	Run npm test	2026-10-07T14:13:23.4785409Z [36;1mnpm test[0m
+validate	Run npm test	2026-10-07T14:13:23.4850635Z shell: /usr/bin/bash -e {0}
+validate	Run npm test	2026-10-07T14:13:23.4850977Z env:
+validate	Run npm test	2026-10-07T14:13:23.4851181Z   UE03_DEMO_FAIL: 1
+validate	Run npm test	2026-10-07T14:13:23.4851402Z ##[endgroup]
+validate	Run npm test	2026-10-07T14:13:23.5974543Z 
+validate	Run npm test	2026-10-07T14:13:23.5975286Z > game-telemetry-demo@0.9.0 test
+validate	Run npm test	2026-10-07T14:13:23.5975888Z > node --test
+validate	Run npm test	2026-10-07T14:13:23.5976065Z 
+validate	Run npm test	2026-10-07T14:13:23.6832165Z TAP version 13
+validate	Run npm test	2026-10-07T14:13:24.8501748Z # Subtest: Paris : été, hiver et dates inexistantes ou ambiguës
+validate	Run npm test	2026-10-07T14:13:24.8509513Z ok 1 - Paris : été, hiver et dates inexistantes ou ambiguës
+validate	Run npm test	2026-10-07T14:13:24.8527908Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8528530Z   duration_ms: 52.789902
+validate	Run npm test	2026-10-07T14:13:24.8529017Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8529392Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8530269Z # Subtest: les signatures du simulateur sont distinguées en v1 et v2
+validate	Run npm test	2026-10-07T14:13:24.8531283Z ok 2 - les signatures du simulateur sont distinguées en v1 et v2
+validate	Run npm test	2026-10-07T14:13:24.8531935Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8532255Z   duration_ms: 5.415677
+validate	Run npm test	2026-10-07T14:13:24.8532652Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8533531Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8534447Z # Subtest: un rapport incohérent est isolé avant toute classification de performance
+validate	Run npm test	2026-10-07T14:13:24.8571041Z ok 3 - un rapport incohérent est isolé avant toute classification de performance
+validate	Run npm test	2026-10-07T14:13:24.8571626Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8572056Z   duration_ms: 0.620228
+validate	Run npm test	2026-10-07T14:13:24.8572446Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8572677Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8573279Z # Subtest: physics et sous-détails de rendu restent validés avant la classification
+validate	Run npm test	2026-10-07T14:13:24.8574030Z ok 4 - physics et sous-détails de rendu restent validés avant la classification
+validate	Run npm test	2026-10-07T14:13:24.8574500Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8574723Z   duration_ms: 0.549186
+validate	Run npm test	2026-10-07T14:13:24.8574978Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8575205Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8575726Z # Subtest: des bots périmés forment un signal indépendant de la signature graphique
+validate	Run npm test	2026-10-07T14:13:24.8576452Z ok 5 - des bots périmés forment un signal indépendant de la signature graphique
+validate	Run npm test	2026-10-07T14:13:24.8576863Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8577465Z   duration_ms: 1.840298
+validate	Run npm test	2026-10-07T14:13:24.8577712Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8577934Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8578627Z # Subtest: l’import distingue doublon, collision d’identifiant et bloc tronqué
+validate	Run npm test	2026-10-07T14:13:24.8579917Z ok 6 - l’import distingue doublon, collision d’identifiant et bloc tronqué
+validate	Run npm test	2026-10-07T14:13:24.8580614Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8581438Z   duration_ms: 6.279622
+validate	Run npm test	2026-10-07T14:13:24.8582090Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8582596Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8583507Z # Subtest: le parseur reprend au bloc suivant après un JSON cassé
+validate	Run npm test	2026-10-07T14:13:24.8584485Z ok 7 - le parseur reprend au bloc suivant après un JSON cassé
+validate	Run npm test	2026-10-07T14:13:24.8585081Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8585632Z   duration_ms: 1.675951
+validate	Run npm test	2026-10-07T14:13:24.8586235Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8586721Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8588234Z # Subtest: le temps accéléré du simulateur ne transforme pas les parties normales en farming
+validate	Run npm test	2026-10-07T14:13:24.8589386Z ok 8 - le temps accéléré du simulateur ne transforme pas les parties normales en farming
+validate	Run npm test	2026-10-07T14:13:24.8589850Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8590076Z   duration_ms: 0.333383
+validate	Run npm test	2026-10-07T14:13:24.8590320Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8590527Z   ...
+validate	Run npm test	2026-10-07T14:13:24.8591040Z # Subtest: l’export fourni conserve ses volumes, ses v2 et ses données suspectes
+validate	Run npm test	2026-10-07T14:13:24.8591719Z ok 9 - l’export fourni conserve ses volumes, ses v2 et ses données suspectes
+validate	Run npm test	2026-10-07T14:13:24.8592133Z   ---
+validate	Run npm test	2026-10-07T14:13:24.8592347Z   duration_ms: 1040.550354
+validate	Run npm test	2026-10-07T14:13:24.8592596Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.8592802Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9383808Z # Subtest: GET /healthz
+validate	Run npm test	2026-10-07T14:13:24.9384433Z ok 10 - GET /healthz
+validate	Run npm test	2026-10-07T14:13:24.9384716Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9385011Z   duration_ms: 76.815639
+validate	Run npm test	2026-10-07T14:13:24.9385341Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9386227Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9386674Z # Subtest: POST /api/reports refuse un corps invalide
+validate	Run npm test	2026-10-07T14:13:24.9387759Z ok 11 - POST /api/reports refuse un corps invalide
+validate	Run npm test	2026-10-07T14:13:24.9388279Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9388513Z   duration_ms: 41.740413
+validate	Run npm test	2026-10-07T14:13:24.9388918Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9389198Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9389720Z # Subtest: POST /api/reports accepte un rapport valide et le journalise
+validate	Run npm test	2026-10-07T14:13:24.9390308Z ok 12 - POST /api/reports accepte un rapport valide et le journalise
+validate	Run npm test	2026-10-07T14:13:24.9390667Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9390886Z   duration_ms: 22.062146
+validate	Run npm test	2026-10-07T14:13:24.9391129Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9391332Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9392365Z # Subtest: démonstration contrôlée du blocage CI sur échec de test
+validate	Run npm test	2026-10-07T14:13:24.9393473Z not ok 13 - démonstration contrôlée du blocage CI sur échec de test
+validate	Run npm test	2026-10-07T14:13:24.9397238Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9397626Z   duration_ms: 2.330995
+validate	Run npm test	2026-10-07T14:13:24.9398060Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9398553Z   location: '/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage/test/ci-gate.test.js:5:1'
+validate	Run npm test	2026-10-07T14:13:24.9399590Z   failureType: 'testCodeFailure'
+validate	Run npm test	2026-10-07T14:13:24.9400273Z   error: 'Échec demandé pour la démonstration du pipeline'
+validate	Run npm test	2026-10-07T14:13:24.9400886Z   code: 'ERR_ASSERTION'
+validate	Run npm test	2026-10-07T14:13:24.9401278Z   name: 'AssertionError'
+validate	Run npm test	2026-10-07T14:13:24.9401699Z   expected: '1'
+validate	Run npm test	2026-10-07T14:13:24.9402005Z   actual: '1'
+validate	Run npm test	2026-10-07T14:13:24.9402348Z   operator: 'notStrictEqual'
+validate	Run npm test	2026-10-07T14:13:24.9402630Z   stack: |-
+validate	Run npm test	2026-10-07T14:13:24.9403416Z     TestContext.<anonymous> (/home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage/test/ci-gate.test.js:6:10)
+validate	Run npm test	2026-10-07T14:13:24.9404270Z     Test.runInAsyncScope (node:async_hooks:214:14)
+validate	Run npm test	2026-10-07T14:13:24.9404839Z     Test.run (node:internal/test_runner/test:1047:25)
+validate	Run npm test	2026-10-07T14:13:24.9405384Z     Test.start (node:internal/test_runner/test:944:17)
+validate	Run npm test	2026-10-07T14:13:24.9406018Z     startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+validate	Run npm test	2026-10-07T14:13:24.9406588Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9407476Z # Subtest: les JSON invalides et 404 sont mesurés sans label de chemin arbitraire
+validate	Run npm test	2026-10-07T14:13:24.9408266Z ok 14 - les JSON invalides et 404 sont mesurés sans label de chemin arbitraire
+validate	Run npm test	2026-10-07T14:13:24.9408663Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9408882Z   duration_ms: 132.095359
+validate	Run npm test	2026-10-07T14:13:24.9409129Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9409344Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9409910Z # Subtest: un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes
+validate	Run npm test	2026-10-07T14:13:24.9410703Z ok 15 - un build client arbitraire et un rapport incohérent ne polluent pas les histogrammes
+validate	Run npm test	2026-10-07T14:13:24.9411140Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9411345Z   duration_ms: 5.827581
+validate	Run npm test	2026-10-07T14:13:24.9411577Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9411782Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9412086Z # Subtest: un rapport v1 contient les champs attendus
+validate	Run npm test	2026-10-07T14:13:24.9412513Z ok 16 - un rapport v1 contient les champs attendus
+validate	Run npm test	2026-10-07T14:13:24.9412834Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9413043Z   duration_ms: 2.929839
+validate	Run npm test	2026-10-07T14:13:24.9413287Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9413497Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9413805Z # Subtest: un rapport v2 deplace rttMs dans network
+validate	Run npm test	2026-10-07T14:13:24.9414208Z ok 17 - un rapport v2 deplace rttMs dans network
+validate	Run npm test	2026-10-07T14:13:24.9414503Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9414710Z   duration_ms: 0.379354
+validate	Run npm test	2026-10-07T14:13:24.9414940Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9415140Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9415456Z # Subtest: l'export texte commence par l'en-tete console
+validate	Run npm test	2026-10-07T14:13:24.9415896Z ok 18 - l'export texte commence par l'en-tete console
+validate	Run npm test	2026-10-07T14:13:24.9416205Z   ---
+validate	Run npm test	2026-10-07T14:13:24.9416407Z   duration_ms: 16.312426
+validate	Run npm test	2026-10-07T14:13:24.9416651Z   type: 'test'
+validate	Run npm test	2026-10-07T14:13:24.9416852Z   ...
+validate	Run npm test	2026-10-07T14:13:24.9417313Z 1..18
+validate	Run npm test	2026-10-07T14:13:24.9417513Z # tests 18
+validate	Run npm test	2026-10-07T14:13:24.9417709Z # suites 0
+validate	Run npm test	2026-10-07T14:13:24.9417910Z # pass 17
+validate	Run npm test	2026-10-07T14:13:24.9418425Z # fail 1
+validate	Run npm test	2026-10-07T14:13:24.9418640Z # cancelled 0
+validate	Run npm test	2026-10-07T14:13:24.9418854Z # skipped 0
+validate	Run npm test	2026-10-07T14:13:24.9419059Z # todo 0
+validate	Run npm test	2026-10-07T14:13:24.9419290Z # duration_ms 1304.302367
+validate	Run npm test	2026-10-07T14:13:24.9555951Z ##[error]Process completed with exit code 1.
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	﻿2026-10-07T14:13:24.9731199Z Post job cleanup.
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0678379Z [command]/usr/bin/git version
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0715911Z git version 2.55.0
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0760179Z Temporarily overriding HOME='/home/runner/work/_temp/9f8ad9e5-4f3b-41c4-83e4-b94c4546607b' before making global git config changes
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0761944Z Adding repository directory to the temporary git global config as a safe directory
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0767840Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Maxime_Rattrapage/Maxime_Rattrapage
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0814418Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.0856412Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1125753Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1160727Z http.https://github.com/.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1172904Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1217656Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1490752Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate	Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262	2026-10-07T14:13:25.1535807Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate	Complete job	﻿2026-10-07T14:13:25.1962779Z Cleaning up orphan processes
+validate	Complete job	2026-10-07T14:13:25.2303163Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

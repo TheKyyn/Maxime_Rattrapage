@@ -1,4 +1,4 @@
-# Tests de sémantique des règles. Fixtures synthétiques, aucune preuve de trafic réel.
+# Cas de test synthétiques pour les règles Prometheus.
 rule_files:
 - rules.yml
 evaluation_interval: 15s

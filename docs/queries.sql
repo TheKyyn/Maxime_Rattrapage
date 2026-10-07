@@ -2,7 +2,10 @@
 SELECT kind, count(*) events FROM events GROUP BY kind;
 
 -- name: audit
-SELECT json_extract(payload,'$.status') status,count(*) records FROM audit GROUP BY status;
+SELECT json_extract(payload,'$.status') status,
+ substr(json_extract(payload,'$.key'),1,instr(json_extract(payload,'$.key'),':')-1) kind,
+ count(*) records
+FROM audit GROUP BY status,kind;
 
 -- name: quality_issues
 SELECT issue.value issue, count(*) records
@@ -51,7 +54,8 @@ SELECT id,local_ts,build,width,bloom,frame_ms,overlay_ms,rtt_ms,tick_gap_ms,sour
 FROM reports WHERE cause='overlay' AND build='beta-20260924-3' AND width>=2560 AND bloom=1 ORDER BY ts LIMIT 5;
 
 -- name: invalid_clients
-SELECT client,count(*) reports,count(DISTINCT server) server_ids,min(local_ts) first_paris,max(local_ts) last_paris,
+SELECT client,count(*) reports,count(DISTINCT server) server_ids,
+ group_concat(DISTINCT build) builds,min(local_ts) first_paris,max(local_ts) last_paris,
  min(json_extract(payload,'$.report.work.stages.render')) min_render_ms,
  max(json_extract(payload,'$.report.fps')) max_fps
 FROM reports WHERE cause='invalid' GROUP BY client;
@@ -78,7 +82,8 @@ SELECT (bot_stale>=2 AND bot_age_ms>=1000) stale_bots,count(*) reports,
 FROM reports GROUP BY stale_bots;
 
 -- name: server_degradation
-SELECT substr(local_ts,1,13) hour_paris,count(*) reports,round(min(tick_gap_ms),1) min_gap_ms,
+SELECT substr(local_ts,1,13) hour_paris,count(*) reports,sum(cause='network') network_reports,
+ round(min(tick_gap_ms),1) min_gap_ms,
  round(max(tick_gap_ms),1) max_gap_ms,round(avg(rtt_ms),1) avg_rtt_ms
 FROM reports WHERE cause!='invalid' AND tick_gap_ms>=150 GROUP BY hour_paris;
 
@@ -89,8 +94,9 @@ SELECT previous_paris,local_ts,round((julianday(ts)-julianday(previous))*86400) 
 FROM ordered WHERE previous IS NOT NULL ORDER BY seconds DESC LIMIT 10;
 
 -- name: missing_completions
-SELECT r.cause,count(*) reports,count(DISTINCT r.server) server_ids
-FROM reports r LEFT JOIN games g ON r.server=g.id WHERE g.id IS NULL GROUP BY r.cause;
+SELECT CASE WHEN r.cause='invalid' THEN 'invalid' ELSE 'valid' END quality,
+ count(*) reports,count(DISTINCT r.server) server_ids
+FROM reports r LEFT JOIN games g ON r.server=g.id WHERE g.id IS NULL GROUP BY quality;
 
 -- name: export_order
 WITH ordered AS (SELECT source_line,local_ts,ts,
@@ -107,7 +113,7 @@ FROM reports r WHERE cause!='invalid' GROUP BY version;
 
 -- name: overlay_context
 WITH source AS (
- SELECT overlay_ms,rtt_ms,
+ SELECT client,overlay_ms,rtt_ms,
  100.0*overlay_ms/json_extract(payload,'$.report.work.totalMs') cpu_share,
  json_extract(payload,'$.report.graphics.gpuRenderMs') gpu_ms,
  json_extract(payload,'$.report.graphics.gpuSampleAgeMs') gpu_age_ms,
@@ -117,7 +123,7 @@ WITH source AS (
  count(*) OVER() n
  FROM reports WHERE cause='overlay' AND width>=2560 AND bloom=1
 )
-SELECT count(*) reports,
+SELECT count(*) reports,count(DISTINCT client) client_ids,
  round(avg(CASE WHEN rn_overlay IN ((n+1)/2,(n+2)/2) THEN overlay_ms END),2) median_overlay_ms,
  round(avg(CASE WHEN rn_rtt IN ((n+1)/2,(n+2)/2) THEN rtt_ms END),2) median_rtt_ms,
  round(avg(CASE WHEN rn_share IN ((n+1)/2,(n+2)/2) THEN cpu_share END),2) median_cpu_share_pct,

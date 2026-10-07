@@ -32,7 +32,7 @@ assert health['status'] == 'ok'
 assert get(3000, '/api/health')['database'] == 'ok'
 targets = get(9090, '/api/v1/targets')['data']['activeTargets']
 assert any(t['labels']['job'] == 'telemetry' and t['health'] == 'up' for t in targets)
-# Les derniers blocs de logs historiques sont envoyés sous 30 secondes.
+# Attendre que tous les événements historiques soient interrogeables dans Loki.
 for attempt in range(45):
     historical = get(3100, '/loki/api/v1/query', {'query':'sum by (event) (count_over_time({dataset="historical"}[8d]))', 'time':'2026-09-27T00:00:00Z'})
     counts = {r['metric']['event']: int(r['value'][1]) for r in historical['data']['result']}

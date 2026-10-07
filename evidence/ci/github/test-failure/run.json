@@ -1,0 +1,120 @@
+{
+  "conclusion": "failure",
+  "createdAt": "2026-10-07T14:13:13Z",
+  "databaseId": 37634867100,
+  "headSha": "03a85e53c34ce0c2411eb2508f527f44d2f777b2",
+  "jobs": [
+    {
+      "completedAt": "2026-10-07T14:13:26Z",
+      "conclusion": "failure",
+      "databaseId": 112838315212,
+      "name": "validate",
+      "startedAt": "2026-10-07T14:13:17Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-07T14:13:18Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-07T14:13:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:19Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 2,
+          "startedAt": "2026-10-07T14:13:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:20Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "number": 3,
+          "startedAt": "2026-10-07T14:13:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:22Z",
+          "conclusion": "success",
+          "name": "Run npm ci --ignore-scripts",
+          "number": 4,
+          "startedAt": "2026-10-07T14:13:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:23Z",
+          "conclusion": "success",
+          "name": "Run npm run lint",
+          "number": 5,
+          "startedAt": "2026-10-07T14:13:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:24Z",
+          "conclusion": "failure",
+          "name": "Run npm test",
+          "number": 6,
+          "startedAt": "2026-10-07T14:13:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:24Z",
+          "conclusion": "skipped",
+          "name": "Run npm run import:history && npm run analyze",
+          "number": 7,
+          "startedAt": "2026-10-07T14:13:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:24Z",
+          "conclusion": "skipped",
+          "name": "Vérifier les règles et leurs cas de test",
+          "number": 8,
+          "startedAt": "2026-10-07T14:13:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:24Z",
+          "conclusion": "skipped",
+          "name": "Post Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "number": 15,
+          "startedAt": "2026-10-07T14:13:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:25Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "number": 16,
+          "startedAt": "2026-10-07T14:13:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-07T14:13:25Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-07T14:13:25Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634867100/job/112838315212"
+    },
+    {
+      "completedAt": "2026-10-07T14:13:26Z",
+      "conclusion": "skipped",
+      "databaseId": 112838407939,
+      "name": "image",
+      "startedAt": "2026-10-07T14:13:27Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634867100/job/112838407939"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-07T14:13:27Z",
+  "url": "https://github.com/TheKyyn/Maxime_Rattrapage/actions/runs/37634867100"
+}

@@ -17,7 +17,7 @@ function createMetrics({ fleet = null, defaults = true } = {}) {
   const serverGaps = new client.Counter({ ...options, name: 'game_server_gap_reports_total', help: 'Rapports cohérents associés à un tickGapMaxMs supérieur ou égal à 150 ms.', labelNames: ['source'] });
   const staleBots = new client.Counter({ ...options, name: 'game_stale_bot_reports_total', help: 'Rapports cohérents signalant au moins deux bots dont la décision date de plus d’une seconde.', labelNames: ['source', 'map'] });
   const active = new client.Gauge({ ...options, name: 'game_active', help: 'Nombre de parties actuellement présentes dans la flotte.', collect() { this.set(fleet ? fleet.liveGames().length : 0); } });
-  // Des séries initialisées rendent explicite l'absence d'événement, sans fabriquer de trafic.
+  // Initialiser les compteurs à zéro pour afficher aussi les catégories sans événement.
   shortWins.inc(0);
   for (const source of ['simulation', 'ingest']) {
     serverGaps.labels(source).inc(0);
